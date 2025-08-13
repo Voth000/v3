@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" 
+    content="#a0ffec" 
+    media="(prefers-color-scheme: light)">
+    <title>In Memoriam</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+
+        @font-face {
+            font-family: 's1';
+            src: url("./Crozet-Regular.ttf") format('truetype');
+        }
+
+        @media (max-width: 550px) {
+
+h1 {
+    font-size: 3em;
+    padding: 24px;
+}
+#image {
+    padding: 0;
+}
+#tumb{
+    width: 200%;
+    max-width: 500%; 
+}
+.p1 {
+    width: 80%;
+}
+
+.p2 {
+    width: 90%;  
+}
+button {
+    font-size: 1em;
+}
+        }
+
+        @media (min-width: 550px) {
+h1 {
+    font-size: 4em;
+}
+
+#image {
+    padding: 0em 12%;
+}
+
+#tumb{
+    width: 100%;
+    max-width: 100%;
+}
+
+.p1 {
+    width: 30%;
+}
+
+.p2 {
+    width: 50%;  
+}
+
+button {
+    font-size: 1.25em;
+}
+
+        }
+
+
+
+        :root {
+            --border-radius: 0;
+            --black: black;
+            --grey2: #ffffffbc;
+            --grey1: #b0b0b065;
+            --white: #ffffff;
+            --bg1: radial-gradient(50% 50% at 50% 50%, #000 77.5%, #262626 100%);
+            --bg2: linear-gradient(0deg, #262626 0.13%, #060606 48.26%, #262626 99.87%);
+
+
+
+            --shadow:  inset 1px 0px 4px 2px rgb(142 142 142 / 75%), 1px -4px 1px 1px rgb(255 255 255 / 8%);
+            --shadowhover:  inset 1px -1px 4px 2px rgba(177, 177, 177, 0.61), 1px -1px 4px 2px rgb(255 255 255 / 41%), 4px 4px 4px 0px rgba(105, 105, 105, 0.448);
+            --t1: 32px;
+            --bold: 800;
+        --box: 4px 4px 4px 0px rgba(105, 105, 105, 0.448);
+        --box2: 2px 2px 2px 0px rgba(105, 105, 105, 0.363);
+        --animate: all 0.1s ease-in, transform 0.1s ease-out;
+        }
+
+
+         html {
+            font-family: "Unbounded", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            overflow-x: hidden;
+         }
+         body {
+            background-color: #262626;
+            display: grid;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+         }
+        
+         section.intro {
+            height: 100vh;
+            display: grid;
+            background: var(--bg1);
+          user-select: none;
+            grid-template-rows: auto auto 1fr;
+         }
+         section.text {
+            gap: 4em;
+            display: grid;
+            justify-items: center;
+            background: var(--bg2);
+            padding-top: 60px;
+            padding-bottom: 60px;
+         }
+
+       #c { 
+            position: absolute;
+            opacity: 0.2;   
+         }  
+
+      .c1 {
+       width: 110%;
+        min-width: 40%;
+        top: 0;   
+         }
+
+        .c2 {
+            max-width: 50%;
+            left: 0;
+          bottom: 0;
+        }
+        .c3 {
+            max-width: 60%;
+            min-width: 10%;
+            right:  -5%;
+          bottom: -20%;
+        }
+
+        .b1 {
+            max-width: 170px;
+            max-height: 247px; 
+            top: 10%;
+            left: 10%;
+        
+        height: 30%;
+        }
+image{
+    pointer-events: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
+}
+       #b { 
+        position: absolute;
+        opacity: 0.6;
+     }  
+     .b2 {
+        max-width: 216px;
+        max-height: 237px; 
+        top: 10%;
+        right: 10%;
+ 
+        height: 30%;
+    }
+
+    .b3 {
+        bottom: 10%;
+        left: 10%;
+    }
+
+h1 {
+    z-index: 1;
+    padding-top: 60px;
+    margin: 0;
+    color: #FFF;
+text-shadow:  0px 4px 4px #e4e4e4, 0 0 0 #000, 0px 4px 4px #d3d3d3;
+font-weight: 400;
+    justify-self: center;
+   
+}
+
+h2 {
+    margin: 0;
+    font-family: "s1", sans-serif;
+    color: greenyellow;
+text-align: center;
+-webkit-text-stroke-width: 0.5;
+-webkit-text-stroke-color: #9BFF73;
+font-size: 3em;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+#image {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    justify-items: center;
+    align-items: center;
+}
+
+#can {
+    filter: drop-shadow(2px 4px 4px #ff141485) saturate(1.2) contrast(1);
+
+    margin-bottom: 60px;
+    max-width: 80%;
+    min-width: 70%;
+}
+#tumb{
+    min-width: 90%; 
+}
+.p1{  
+  padding: 24px;  
+  gap: 24px;
+}
+
+
+
+.instruction {
+ align-items: unset !important;
+    padding: 24px;
+    gap: 1em;
+}
+
+#p {
+    line-height: 140%;
+    height: fit-content;
+    color: #ffffff;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+align-self: stretch;
+border: 0.5px solid rgba(191, 191, 191, 0.77);
+background: rgba(255, 255, 255, 0.15);
+box-shadow: 0px 2px 2px 0px rgba(255, 255, 255, 0.25), 0px 2px 2px 0px rgba(255, 255, 255, 0.25) inset;
+backdrop-filter: blur(4.349999904632568px);
+}
+
+h3,p {
+    margin: 0;
+}
+
+h3 {
+    font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: -0.128px;
+}
+
+p{
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+letter-spacing: -0.128px;
+}
+
+.green {
+    color: greenyellow;
+}
+
+.circle {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+}
+
+.tb {
+    box-shadow: 0px 2px 2px 0px rgba(255, 255, 255, 0.25), 0px 2px 2px 0px rgba(255, 255, 255, 0.25) inset;
+    justify-items: center;
+    padding: 4px;
+    border: 0.5px solid rgba(192, 192, 192, 0.46);
+    background: rgba(255, 255, 255, 0.222);
+    backdrop-filter: blur(4.349999904632568px);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: #ffffff;
+}
+.but {
+    width: 100%;
+    display: grid;
+    gap: 0.5em;
+}
+
+button {
+    
+    padding: 0.5em;
+    font-family: "Unbounded", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 800;
+            font-style: normal;
+            
+            cursor: pointer;
+}
+
+.but1 {
+    background-color: rgba(29, 29, 29, 0.004);
+    border: greenyellow 1px solid;
+    color: greenyellow;
+}
+
+.but1:hover {
+    box-shadow: 0px 4px 4px #e4e4e4, 0 0 0 #000, 0px 4px 4px #d3d3d3;
+
+    background-color: rgb(211, 245, 160);
+    color: rgb(0, 0, 0);
+}
+
+.but2 {
+    background-color: greenyellow;
+  
+}
+
+.but2:hover {
+    box-shadow: 0px 4px 4px #e4e4e4, 0 0 0 #ffffff, 0px 4px 4px #d3d3d3;
+    background-color: rgb(255, 47, 47);
+    color: rgb(255, 255, 255);
+}
+
+.credit {
+    padding: 16px;
+    text-align: end;
+    color: grey;
+    justify-items: center;
+}
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+
+</head>
+<body>
+   
+        
+   
+
+    <section class="intro">
+        <h1>In Memoriam</h1>
+        <h2>???? - 2024</h2>
+        <div id="image">
+            <img id="can"  class="can1" src="img/can1.webp" alt="logo">
+           <img id="tumb"  class="tomb" src="img/tumb.gif" alt="logo">
+           <img id="can"  class="can2" src="img/can2.webp" alt="logo">
+        </div>
+    </section>
+    <section class="text">
+<div id="p" class="p1">
+    <h3>What is this about?</h3>
+    <p>Dear Fellow Students,
+<br> <br>
+        ACRE promised to provide each student with an access card at the start of the semester, but many of us have yet to receive one. Instead, they've asked us to use their app for school entry. 
+        Unfortunately, <span class="green">the app is not functioning properly</span>, creating significant inconvenience for many of us. This issue has persisted since the semester began, 
+        and with <span class="green">winter approaching</span>, there has been no resolution.
+        <br> <br>
+        <span class="green">We can’t accept this any longer.</span>
+        <br> <br>
+        Please <span class="green">join</span> us in <span class="green">emailing ACRE</span> to urge them to address this situation ASAP.</p>
+</div>
+
+<div class="p2">
+    <div class="tb">
+        <div class="circle" style="background-color:red;"></div>
+        <div class="circle" style="background-color:yellow;"></div>
+        <div class="circle" style="background-color:grey;"></div>
+        <h3>What to do?</h3>
+    </div>
+    <div id="p" class="instruction"> 
+        <button class="but1"  data-clipboard-target="#copied"> 
+            1. Copy this template Email by clicking here
+        </button>
+        <div id="copied">
+        <b>Title:</b>  Access card Urgency
+       <br> <b>Content:  </b>
+        Dear ACRE Team, <br>
+        I’m writing to express concern about the access cards promised at the start of the semester, as many of us still haven't received them. Instead, we've been asked to use the app, which isn’t functioning properly and is causing significant inconvenience. 
+        <br> <br>
+        Many new students are experiencing unwanted freezing outside, fearing they will be late for class and miss important knowledge and points, even if they arrive on time. The app malfunctions about 90% of the time, leading to stress and anxiety that negatively impacts our mental health and studies.
+        <br> <br>
+        With winter approaching, we urge you to provide a real and sustainable solution for the access card issues.
+        <br>Thank you for your attention. <br>
+        Sincerely, <br>
+        {Your Name}
+    </div>
+        <div class="but">
+           
+            <button onclick="location.href='mailto:jukka.salmisto@aalto.fi';" class="but2"> 2. Click here to send Email</button>
+        </div>
+    </div>
+    <div class="credit">
+        (cc) @12mbrams.studios
+    </div>
+
+</div>
+
+    </section> 
+
+    <div>
+        <div><img id="c"  class="c1" src="img/cloud1.webp" alt="logo" ></div>
+        <div><img id="c"  class="c2" src="img/cloud2.webp" alt="logo"></div>
+        <div><img id="c"  class="c3" src="img/cloud3.webp" alt="logo"></div>
+        <div><img id="b"  class="b1" src="img/box1.webp" alt="logo"></div>
+        <div><img id="b"  class="b2" src="img/box2.webp" alt="logo"></div>
+        <div><img id="b"  class="b3" src="img/box3.webp" alt="logo"></div>
+    </div>
+
+   
+
+    <script>
+        window.onload = function(e) {
+            var evt = e || window.event, // define event (cross browser)
+              imgs, // images collection
+              i; // used in local loop
+            // if preventDefault exists, then define onmousedown event handlers
+            if (evt.preventDefault) {
+              // collect all images on the page
+              imgs = document.getElementsByTagName('img');
+              // loop through fetched images
+              for (i = 0; i < imgs.length; i++) {
+                // and define onmousedown event handler
+                imgs[i].onmousedown = disableDragging;
+              }
+            }
+          };
+          
+          // disable image dragging
+          function disableDragging(e) {
+            e.preventDefault();
+          }
+
+
+          var clipboard = new ClipboardJS('.but1')
+
+clipboard.on('success', function(e) {
+    let oldtext = e.trigger.textContent
+    e.trigger.textContent = 'Copied!'
+    setTimeout(() => e.trigger.textContent = oldtext, 5000)
+    e.clearSelection()
+
+});
+
+
+
+    </script>
+</body>
+</html>

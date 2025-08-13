@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{Live-Event} 12/04/2025 Onda Vj set</title>
+    <link rel="icon" href="./assets/favicon.webp" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+        @font-face {
+            font-family: 'p1';
+            src: url("./Font/otf/Basteleur-Moonlight.otf") format('truetype');
+        }
+        @font-face {
+            font-family: 'h2';
+            src: url("./Font/otf/Ouvrieres-rassasiees.otf") format('truetype');
+        }
+        @font-face {
+            font-family: 'h1';
+            src: url("./Font/otf/Ouvrieres-rassasiees.otf") format('truetype');
+        }
+        :root {
+            --shadowhover:  rgb(255 255 255 / 67%) 4px 24px 13.6px 1px, rgb(212 212 212 / 67%) 2px 3px 11.5px 4px;
+            --shadow:  inset 1px 0px 4px 2px rgb(91 91 91 / 75%), 1px -4px 1px 1px rgb(255 255 255 / 8%);
+            --test:linear-gradient(rgba(255, 255, 255, 0.831) 5%, 20%, rgb(139 139 139 / 66%) 65%);
+            --test2: linear-gradient(rgba(255, 255, 255, 0.052) 5%, 90%, rgba(135, 135, 135, 0.808) 10%);
+            --bga: rgba(230, 230, 230, 0.128);
+        }
+        body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: #000;
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Unbounded', monospace;
+            color: #222;
+        }
+        nav {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 10;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            padding-top: 10px;
+            all: unset;
+            list-style-type: none;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-content: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        video {
+            object-fit: cover;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+        }
+        h1 {
+            font-family: 'p1';
+    font-weight: 200;
+    font-size: 6em;
+        }
+        .nav.active {
+            background: var(--test);
+            color: var(--black);
+        }
+        .nav.active a {
+            color: #bbbbbb;
+        }
+        .nav a:hover  {
+            color: rgb(155, 155, 155);
+        }
+        .nav a {
+            color: rgb(194 194 194 / 73%);
+        }
+        .nav.active:hover a {
+            color: rgb(155, 155, 155);
+        }
+        li {
+            box-shadow: 0px 4px 4px 0px rgba(116, 116, 116, 0.3);
+    background: #ffffff00;
+    backdrop-filter: blur(3px);
+            align-self: center;
+            z-index: 4;
+            text-align: center;
+            padding: 4px 2em;
+        }
+        li:hover {
+            background: var(--test2) !important;
+            cursor: pointer;
+            filter: brightness(1.1) contrast(1.4);
+        }
+        a {
+            font-family: 'p1', monospace;
+            font-weight: 200;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        button {
+            border: 0.5px solid #cbcbcb;
+            border-radius: 0px;
+            padding: 4px 8px;
+            background-color: #ffffff51;
+            backdrop-filter: blur(1px);
+            font-family: 'p1', monospace;
+            color: #000000;
+            transition: background 0.3s, color 0.3s, transform 0.2s;
+        }
+        button:hover {
+            box-shadow: var(--shadowhover);
+            background: var(--bga);
+            color: #222;
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        
+        section {
+            width: 100vw;
+            min-height: 200vh;
+            display: grid;
+            justify-items: center;
+            position: relative;
+            margin: 0;
+            padding: 0;
+        }
+        section:not(:first-of-type) {
+            margin-top: -8vw; /* overlap for push effect */
+        }
+        section article {
+            color: #c3c3c3;
+            text-shadow: rgb(192 192 192 / 34%) -1px -1px 8px, rgb(171 171 171) -1px -1px 14px, rgb(53 53 53 / 68%) -1px -1px 30px;
+            mix-blend-mode: difference;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            margin-top: 35vh;
+            display: flex;
+        }
+        section.setup article {
+            margin-top: 0;
+            height: fit-content;
+            
+        }
+        section article > div {
+            
+        }
+        section article .mh {
+            opacity: 0.7;
+            font-style: italic;
+        }
+        section img {
+            width: 100%;
+            background: lightgray 50%;
+            box-shadow: -3px 4px 85.7px 18px #000 inset;
+            display: block;
+            margin: 0 auto;
+          max-height: 100vh;
+            object-fit: cover;
+            z-index: 1;
+            position: relative;
+        }
+        article.blu {
+            margin-top: -50vh;
+        }
+        p {
+            color: #c3c3c3;
+            text-shadow: rgb(192 192 192 / 34%) -1px -1px 8px, rgb(171 171 171) -1px -1px 14px, rgb(53 53 53 / 68%) -1px -1px 30px;
+            font-weight: 300;
+        }
+        @media (max-width: 1024px) {
+            section {
+                
+                display:block;
+                justify-items: center;
+                
+            }
+            h1{
+                font-size: 3em;
+            }
+            section article {
+                display: grid;
+                justify-items: center;
+                margin-top: 2em;
+                box-shadow: none;
+            }
+            article.blu {
+                margin-top: -10vh;
+            }
+            section article > div {
+               
+                padding: 0;
+            }
+            section img {
+                width: 100%;
+            }
+            section:not(:first-of-type) {
+                margin-top: 0;
+            }
+        }
+        .img-overlay-container {
+            position: relative;
+            width: 100vw;
+            max-height: 100vh;
+            overflow: hidden;
+        }
+        .img-overlay-container img {
+            width: 100vw;
+            max-height: 100vh;
+            object-fit: cover;
+            display: block;
+        }
+        .img-gradient-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            z-index: 1;
+            background:         
+            radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 85.69%, rgb(255 255 255 / 0%) 95%, rgb(0, 0, 0) 100%)
+        }
+        .overlay1 {
+            height: fit-content;
+            position: relative;
+            display: inline-block; /* shrink to fit video */
+        }
+        .overlay1 video {
+            display: block;
+            /* No width/height set: use video's intrinsic size */
+        }
+        .gradient1 {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            background:
+                linear-gradient(to bottom,   rgb(0, 0, 0) 0%, rgba(255,255,255,0) 4%, rgba(255,255,255,0) 96%, rgb(0, 0, 0) 100%),
+                linear-gradient(to right,    rgb(0, 0, 0) 0%, rgba(255,255,255,0) 4%, rgba(255,255,255,0) 96%, rgb(0, 0, 0) 100%);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav"><a href="index.html">Home</a></li>
+            <li class="nav active"><a href="work.html">Work</a></li>
+            <li class="nav"><a href="artits.html">About</a></li>
+        </ul>
+    </nav>
+
+        <section >
+            <div class="img-overlay-container">
+                <video playsinline autoplay muted loop id="video1"
+                src="./assets/unity/unity.mp4"
+                class="lazy-video"></video>
+                <div class="img-gradient-overlay"></div>
+                
+            </div>
+            <article class="blu">
+                <div>
+                    <h1>{Unity} Tutorial </h1>
+                    
+                        <p>How to create & control  <br> humanoid 3D characters
+                            
+                            </p>
+                </div>
+                <div class="mh">
+                    <p>This Unity project features a simple third-person character controller <br>
+            
+                        with movement, jumping, and animation switching. The character can walk, run, and ump based on user input, with corresponding animations triggered in the Animator.  <br>
+                        This setup is suitable for basic character control in a 3D scene. </p>
+                </div>
+            </article>
+            <div class="overlay1">
+                <img src="./assets/unity/1.webp" alt="Interview 2">
+                <div class="gradient1"></div>
+            </div>
+            
+        </section>
+        <section >
+            <article>
+                <div class="overlay1">
+                    <img src="./assets/unity/4.webp" alt="Interview 2">
+                    <div class="gradient1"></div>
+                </div>
+            
+                </div>
+            </article>
+            <div >
+                <p>{First}: <br> Create & bake & map 3D character texture img into one file
+                    </p>
+            </div>
+        </section>
+        <section >
+            <article>
+                <div class="overlay1">
+                    <img src="./assets/unity/5.webp" alt="Interview 2">
+                    <div class="gradient1"></div>
+                </div>
+            
+                </div>
+            </article>
+            <div >
+                <p>{Second}: <br> Rigged & create animations <br> export to fbx files
+                    </p>
+            </div>
+        </section>
+        <section >
+            <article>
+                <div class="overlay1">
+                    <img src="./assets/unity/3.webp" alt="Interview 2">
+                    <div class="gradient1"></div>
+                </div>
+            
+                </div>
+            </article>
+            <div >
+                <p>{Third}: <br> Import fbx files and texture into unity 
+                    <br> Example of the unity scene set up
+                    </p>
+            </div>
+        </section>
+        <section >
+            <article>
+                <div class="overlay1">
+                    <img src="./assets/unity/2.webp" alt="Interview 2">
+                    <div class="gradient1"></div>
+                </div>
+            
+                </div>
+            </article>
+            <div >
+                <p>{4th}: <br> Set up Animator drivers
+                    
+                    </p>
+            </div>
+        </section>
+        <section >
+            <article>
+                <div class="overlay1">
+                    <img src="./assets/unity/6.webp" alt="Interview 2">
+                    <div class="gradient1"></div>
+                </div>
+            
+                </div>
+            </article>
+            <div >
+                <p>{5th}: <br> Add Controller Script
+                    
+                    </p>
+            </div>
+        </section>
+       
+       
+   
+</body>
+</html>

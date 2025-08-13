@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voth000's Works</title>
+    <link rel="icon" href="./assets/favicon.webp" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
+        @font-face {
+            font-family: 'p1';
+            src: url("./Font/otf/Basteleur-Moonlight.otf") format('truetype');
+        }
+        
+        
+        @font-face {
+            font-family: 'h2';
+            src: url("./Font/otf/Ouvrieres-rassasiees.otf") format('truetype');
+          }
+        
+        @font-face {
+            font-family: 'h1';
+            src: url("./Font/otf/Ouvrieres-rassasiees.otf") format('truetype');
+          }
+
+        :root {
+            --radius: 0px;
+            --gap: 8px;
+            --bg:  linear-gradient(to bottom right, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) top right / 50% 50% no-repeat;
+            ;
+            --buttonbg:  linear-gradient(to bottom right, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, rgba(255, 255, 255, 0.00) 9%, rgba(213, 213, 213, 0.39) 50%) top right / 50% 50% no-repeat;
+        --bga: rgba(232, 255, 213, 0.833);
+            --border: 0.5px solid #d0f8afd9;
+            --boxshadow:0px 4px 4px 0px rgba(116, 116, 116, 0.25);
+            --filter: blur(0px);
+            --backdropfilter: blur(10px);
+        --bgbutton: rgba(247, 247, 247, 0.20);
+        --filter:  blur(0px);
+        --color: black;
+     
+        
+      
+    --navtext: #ffffff;
+        --white: #ffffff;
+       --bgcard: rgba(255, 255, 255, 0.212);
+       
+        --shadow:  inset 1px 0px 4px 2px rgb(206 206 206 / 75%), 1px -4px 1px 1px rgb(255 255 255 / 8%);
+        --bgtrans: linear-gradient(180deg, rgba(247, 247, 247, 0.20) 0%, rgba(255, 255, 255, 0.00) 100%);
+        --test:linear-gradient(rgba(255, 255, 255, 0.831) 5%, 20%, rgb(139 139 139 / 66%) 65%);
+        --test2: linear-gradient(rgba(255, 255, 255, 0.052) 5%, 90%, rgba(135, 135, 135, 0.808) 10%);
+
+        
+        }
+        
+        @font-face {
+            font-family: 'm1';
+            src: url('./Millionaire-Script.ttf');
+        }
+
+        .fs-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fs-container:fullscreen img,
+.fs-container:-webkit-full-screen img,
+.fs-container:fullscreen video,
+.fs-container:-webkit-full-screen video {
+    max-height: none !important;
+    max-width: none !important;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+.fs-container img,
+.fs-container video {
+    max-width: 100vw;
+    max-height: 100vh ;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.closeFullscreenBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+       
+        nav {
+
+            backdrop-filter: blur(1px);
+            background: linear-gradient(0deg, rgb(255 255 255 / 0%) 0%, rgb(255 255 255 / 30%) 80%, #ffffff69 100%);
+            width: 100%;
+            position: absolute; /* This will keep the nav in its natural flow until scrolling past vfx */
+            top: 0;
+            z-index: 10;
+            background-color: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        ul {
+        padding-top: 10px;
+            all: unset;
+            list-style-type: none;
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-content: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .nav.active {
+            background: var(--test);
+            color: var(--black);
+        }
+        
+        .nav.active a {
+            color: var(--white);
+        }
+        
+        .nav a:hover  {
+            color: rgb(155, 155, 155);
+        }
+        
+        .nav a {
+            color: rgb(155, 155, 155);
+        }
+        
+        .nav.active:hover a {
+            color: rgb(155, 155, 155);
+        }
+        
+        a {
+           
+            font-family: 'p1', monospace;
+            font-weight: 200;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        li {
+            box-shadow: 0px 4px 4px 0px rgba(116, 116, 116, 0.09);
+    background: #ffffff19;
+    backdrop-filter: blur(3px);
+            align-self: center;
+            z-index: 4;
+            text-align: center;
+            padding: 4px 2em;
+        
+        }
+        
+        li:hover {
+            
+            background: var(--test2) !important;
+            cursor: pointer;
+        filter: brightness(1.1) contrast(1.4);
+        }
+        
+        .nav.active {
+            background: var(--test);
+          
+        }
+        
+        @media (max-width: 500px) {
+            #info {
+                padding: 4em 2em !important;
+            }
+        }
+        
+        
+        /* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 8px;
+  }
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+ *::-webkit-scrollbar-thumb {
+    background-color: #9b9b9b;
+    border-radius: 0px;
+    border: 3px dashed #ffffff;
+  }
+        
+       
+        
+        button {
+            border: 0.5px solid grey;
+            border-radius: 0px;
+        padding: 4px 8px;
+        background-color: var(--grey2);
+        backdrop-filter: blur(20px);
+            font-family: 'Unbounded', monospace;
+            font-size: 16px;
+            color: #000000;
+        }
+        
+        
+        html,body {
+           
+            user-select: none;
+            overflow: hidden;
+            font-family: 'Unbounded', monospace;
+            font-weight: 200;
+            color: #333;
+          }
+        
+        body{
+            background-image: url("./assets/bg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+            overflow: hidden;
+          background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+        
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+            margin: 0px;
+        }
+
+        .unbounded {
+            font-family: "Unbounded", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 200;
+            font-style: normal;
+          }
+        
+          h1 {
+            font-family: 'm1';
+            background: linear-gradient(to bottom right, #a2ff38 50%, rgb(223, 255, 197) 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #a2ff38 20%, rgb(223, 255, 197) 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #a2ff38 25%, rgb(223, 255, 197) 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #a2ff38 5%, rgb(223, 255, 197) 50%) top right / 50% 50% no-repeat;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #e3fccf73;
+        backdrop-filter: blur(10.350000381469727px);
+        font-variant-numeric: lining-nums proportional-nums stacked-fractions;
+        text-shadow:  0px 4px 4px rgba(255, 255, 255, 0.74);
+        font-size: 6em;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 90%; /* 115.2px */
+        letter-spacing: -2.56px;
+        position: absolute;
+        width: 90%;
+        transform: rotate(-0.072deg);
+        text-align: center;
+          margin: 0;
+          z-index: -1;
+          }
+        
+          h4 {
+            font-family: 'm1';
+            margin: 0.5em 0.5em;
+            font-size: 40px;
+          }
+      
+         
+        
+          .button {
+            color: var(black);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        align-items: center;
+        padding: 12px 10px;
+        width: fit-content;
+        background: var(--bgb);
+        
+        box-shadow: var(--boxshadow);
+          }
+        
+          .nav {
+        
+            justify-items: end;
+            display: grid;
+            gap: 0.5em;
+          }
+          
+          .nav .button {
+            border: 1px solid rgba(191, 191, 191, 0.77);
+        
+          
+          }
+        
+          .button:hover {
+            background: var(--bga);
+            border: none;
+            font-weight: 300;
+            cursor: pointer;
+          }
+          .button:focus {
+            background: var(--bg);
+           
+            font-weight: 400;
+            cursor: pointer;
+          }
+        
+          
+        
+          section {
+           overflow-y: scroll;
+           height: 100%; 
+          }
+        
+        
+        #info {
+           padding: 4em;
+           
+        }
+
+        .card {
+            
+    filter: drop-shadow(-1px 0px 5px grey);
+    align-items: stretch;
+   
+    transition: transform 0.3s, flex-grow 0.3s;
+    will-change: transform, visibility;
+    gap: auto;
+    /* background-color: #eee; */
+    color: #444;
+   
+    cursor: default;
+    font-size: 24px;
+    transition: 0.4s;
+    align-items: center;
+
+        }
+
+        .card:hover {
+            padding: 1em;
+            user-select: none;
+            cursor: default;
+        }
+
+        .accordion {
+            padding: 2px 8px;
+            align-items: stretch;
+            grid-template-rows: auto 1fr;
+            background: var(--bgcard);
+            box-shadow: 0px -4px 4px 0px rgba(116, 116, 116, 0.134);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s, flex-grow 0.3s;
+            will-change: transform, visibility;
+            gap: auto;
+            display: flex
+        ;
+            /* background-color: #eee; */
+            color: #444;
+
+            /* padding: 18px; */
+            width: 40%;
+            /* border: none; */
+            /* text-align: left; */
+            /* outline: none; */
+            font-size: 16px;
+            transition: 0.4s;
+            align-items: center;
+            justify-content: space-between;
+          }
+          
+          .active, .accordion:hover {
+           cursor: pointer;
+          }
+          
+          .panel {
+      
+    display: flex
+    ;
+        padding: 1em;
+        align-items: stretch;
+        background: var(--bgcard);
+        box-shadow: 0px 4px 4px 0px rgba(116, 116, 116, 0.134);
+        backdrop-filter: blur(8px);
+        transition: transform 0.3s, flex-grow 0.3s;
+        will-change: transform, visibility;
+        gap: 2em;
+        color: #444;
+        
+        font-size: 24px;
+        transition: 0.4s;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+          }
+
+          .panel.hidden {
+            display: none;
+        }
+        
+          b {
+            font-family: 'p1';
+            font-weight: 400;
+          }
+        
+          .accordion span:after {
+    content: "\002B"; /* ➕ when closed */
+    color: #000;
+    float: left;
+}
+
+.accordion.active span:after {
+    content: "\2212"; /* ➖ when open */
+    color: #000;
+    float: left;
+}
+
+
+          .name {
+            font-size: 14px;
+          }
+        
+          #tag {
+            font-size: 14px;
+            display: flex
+        ;
+            padding: 4px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background: radial-gradient(209.26% 50.01% at 50% 50%, #ffffff96 86.5%, rgba(255, 255, 255, 0.283) 100%);
+            box-shadow: -4px 3px 4px 0px rgba(155, 155, 155, 0.20) inset, 5px -2px 4px 0px rgba(152, 152, 152, 0.25) inset;
+        }
+        
+        
+          div#intro {
+            gap: 12px;
+            padding-right: 2em;
+            display: flex;
+            /* justify-content: flex-end; */
+            flex-direction: column;
+            align-items: flex-end; }
+        
+            div#people {
+                gap: 12px;
+                padding: 2em;
+            }
+         
+            .link {
+                max-height: 200px;
+                height: 100%;
+                
+                width: auto;
+                    }
+
+        .link img {
+           
+            object-fit: contain;
+            height: 100%;
+            width: 100%;
+            /* max-width: 200px; */
+            max-height: 200px;
+        }
+
+        .link video {
+            
+            height: 100%;
+          
+          
+            max-height: 200px;
+        }
+        
+        .tit {
+            gap: 8px;
+            display: flex
+        ;
+            flex-direction: row;
+        }
+        .work {
+            padding: 0em 0.5em;
+            transition: 0.4s;
+            transition: transform 0.3s, flex-grow 0.3s;
+            display: flex
+        ;
+            flex-direction: column;
+            gap: 0.5em;
+        }
+
+        .work:hover {
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.711);
+            box-shadow: 0px 4px 4px 0px rgba(233, 233, 233, 0.703);
+transform: scale(1.05);
+        }
+
+      
+         
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const accordions = document.querySelectorAll(".accordion");
+
+    // Function to get URL parameters
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // Function to open specific accordion
+    function openAccordion(tabName) {
+        accordions.forEach(accordion => {
+            const panel = accordion.nextElementSibling;
+            const accordionText = accordion.querySelector('div b').textContent.toLowerCase();
+            
+            if (accordionText.includes(tabName.toLowerCase())) {
+                accordion.classList.add("active");
+                panel.classList.remove("hidden");
+            } else {
+                accordion.classList.remove("active");
+                panel.classList.add("hidden");
+            }
+        });
+    }
+
+    // Check for tab parameter in URL
+    const tabParam = getUrlParameter('tab');
+    if (tabParam) {
+        openAccordion(tabParam);
+    } else {
+        // Default behavior - all panels hidden
+        accordions.forEach(accordion => {
+            const panel = accordion.nextElementSibling;
+            panel.classList.add("hidden");
+        });
+    }
+
+    // Toggle logic for clicking
+    accordions.forEach(accordion => {
+        accordion.addEventListener("click", () => {
+            accordion.classList.toggle("active");
+            const panel = accordion.nextElementSibling;
+            panel.classList.toggle("hidden");
+        });
+    });
+});
+
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="nav"><a href="index.html">Home</a></li>
+            <li class="nav active"><a href="work.html">Work</a></li>
+            <li class="nav"><a href="artits.html">About</a></li>
+            
+        </ul>
+    </nav>  
+    <section>
+    <div id="info">
+        <div class="card">
+        <div class="accordion">
+            <div><b>Creative Coding</b></div>
+            <span></span>
+        </div>
+        <div class="panel hidden">
+        
+
+<div class="work">
+   <div class="name"> Grow Flowers App </div>
+   <div class="link" onclick="window.open('https://voth000.github.io/bhn/','Bhn');">
+    <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/3.mp4"></video>
+   </div> 
+    <div class="tit">
+        <div id="tag">#Threejs</div>
+        <div id="tag">#Interactive</div>
+        <div id="tag">#UI</div>
+    </div>
+    </div>
+    <div class="work">
+        <div class="name"> Tear/Journaling App</div>
+        <div class="link" onclick="window.open('https://voth000.github.io/tear/','tear');">
+            <video playsinline autoplay muted loop id="video1" style="width:100%; height:100%" src="./video/1.mp4" class="lazy-video"></video> 
+        </div> 
+         <div class="tit">
+             <div id="tag">#Website</div>
+             <div id="tag">#GLSL</div>
+             <div id="tag">#Interactive</div>
+         </div>
+         </div>
+
+         <div class="work">
+            <div class="name">  @bapxao.oi post </div>
+            <div class="link" onclick="window.open('https://www.instagram.com/p/C3kscwbvTW8/?img_index=1','bapxaooimemeber');">
+                <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/bhn.mp4" alt="ads reels"> </video>
+            </div> 
+             <div class="tit">
+                 <div id="tag">✨: Interactive</div>
+                 <div id="tag">✨: Javascript</div>
+             </div>
+             </div>
+         
+         <div class="work">
+            <div class="name"> Messy As I</div>
+            <div class="link" onclick="window.open('https://voth000.github.io/ninjalead/','Bhn');">
+                <video playsinline autoplay muted loop id="video1" style="width:100%; height:100%" src="./video/2.mp4" class="lazy-video"></video>
+            </div> 
+             <div class="tit">
+                 <div id="tag">#Javascript</div>
+                 <div id="tag">#Website</div>
+             </div>
+             </div>
+             <div class="work">
+                <div class="name"> Messy As II</div>
+                <div class="link" onclick="window.open('https://voth000.github.io/archive101/','messyasII');">
+                    <video playsinline autoplay muted loop id="video1" style="width:100%; height:100%" src="./video/6.mp4" class="lazy-video"></video> 
+                </div> 
+                 <div class="tit">
+                     <div id="tag">#Interactive</div>
+                     <div id="tag">#Threejs</div>
+                 </div>
+                 </div>         
+        </div>
+</div>
+
+<div class="card">
+        <div class="accordion">
+            <div><b>UX/UI</b></div>
+            <span></span>
+        </div>
+        <div class="panel hidden">
+            <div class="work">
+                <div class="name"> In memoriam</div>
+                <div class="link" onclick="window.open('https://www.figma.com/deck/0LHoGbhuy5YNYDoVo5wPg0/In-Memorial?node-id=1-827&viewport=-154%2C-159%2C0.73&t=c73G564rNtkWttVa-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1','aaltoproject');">
+                    <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/aalto.mp4" class="lazy-video"></video>
+                </div> 
+                <div class="tit">
+                    <div id="tag">#Coding</div>
+                    <div id="tag">#Ux</div>
+                    <div id="tag">#Web</div>
+                </div>
+           </div> 
+            <div class="work">
+                 <div class="name"> FUNI</div>
+                 <div class="link" onclick="window.open('https://www.figma.com/proto/R5sRSuXzIuM32C9MOFZA84/Advance-UX-Design?page-id=0%3A1&node-id=1-1950&viewport=443%2C1032%2C0.04&t=jwCHUqlmIuDoXmOn-1&scaling=contain&content-scaling=responsive','Bhn');"><img src="./assets/Home.webp" alt=""> </div> 
+                 <div class="tit">
+                     <div id="tag">#Ux</div>
+                     <div id="tag">#Case-Study</div>
+                 </div>
+            </div>
+           
+           <div class="work">
+            <div class="name"> L'Officiel Hope</div>
+            <div class="link" onclick="window.open('https://www.figma.com/deck/d7qikzjCDvFDyzhQhWX40r/Sowing-the-seeds?node-id=1-629&viewport=-154%2C-159%2C0.73&t=9G4P1deXIxNvV4c5-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1','lofficiel');">
+                <img src="./assets/10.webp" alt="">
+            </div> 
+             <div class="tit">
+                 <div id="tag">#Onsite</div>
+                 <div id="tag">#Interactive</div>
+             </div>
+</div>        
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="accordion">
+            <div><b>Exhibition</b></div>
+            <span></span>
+        </div>
+        <div class="panel hidden">
+            <div class="work">
+                        <div class="name"> L'Officiel Hope</div>
+                        <div class="link" onclick="window.open('https://www.lofficielvietnam.com/o-by-l-officiel-vietnam/o-by-l-officiel-2024-voth000-sinh-ra-roi-mat-di-vap-nga-roi-lai-dung-len','lofficiel');">
+                           
+                            <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/oexpo.mp4" class="lazy-video">
+                        </div> 
+                         <div class="tit">
+                             <div id="tag">#Onsite</div>
+                             <div id="tag">#Interactive</div>
+                         </div>
+            </div>
+            <div class="work">
+                    <div class="name"> Tear</div>
+                    <div class="link" onclick="window.open('https://teargallery.com/voth/','Tearweb');">
+                        <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/tear.mp4" class="lazy-video">
+                        </video> 
+                    </div> 
+                     <div class="tit">
+                         <div id="tag">#Interactive</div>
+                         <div id="tag">#App</div>
+                     </div>
+            </div> 
+            <div class="work">
+                <div class="name"> Intac</div>
+                <div class="link" onclick="window.open('https://www.intacnet.org/intac-years/intac-2024-25/','Bhn');">
+                    <img src="./assets/02.webp" alt="">
+                </div> 
+                 <div class="tit">                     
+                     <div id="tag">#Onsite</div>
+                     <div id="tag">#Animations</div>                    
+                 </div>
+            </div>
+            <div class="work">
+                <div class="name"> Ambit</div>
+                <div class="link" onclick="window.open('https://www.instagram.com/stories/highlights/18019156961497782/','ArchivePage');">
+                    <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/Ambit.mp4" class="lazy-video"></video> 
+                </div> 
+                 <div class="tit">                     
+                     <div id="tag">#Onsite</div>
+                     <div id="tag">#vfx</div>                    
+                 </div>
+            </div> 
+            <div class="work">
+                <div class="name"> Messy As</div>
+                <div class="link" onclick="window.open('https://voth000.github.io/ninja101/','Bhn');">
+                    <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/messy.mp4" class="lazy-video"></video> 
+                </div> 
+                 <div class="tit">                     
+                     <div id="tag">#Sticker</div>
+                     <div id="tag">#Animations</div>
+                     <div id="tag">#3D</div>                    
+                 </div>
+            </div>       
+        </div>
+    </div>
+
+<div class="card">
+    <div class="accordion">
+        <div><b>Installation</b></div>
+        <span></span>
+    </div>
+    <div class="panel hidden">
+        <div class="work">
+            <div class="name"> Blu-ug Vj Set</div>
+            <div class="link" onclick="window.open('https://voth000.fi/blu.html/','blu');">
+                <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/blu1.mp4" class="lazy-video"></video>  
+            </div> 
+             <div class="tit">
+                 <div id="tag">#Vj</div>
+                 <div id="tag">#TouchDesigner</div>
+             </div>
+             </div>
+             <div class="work">
+                <div class="name"> SWAGG20 Fes </div>
+                <div class="link" onclick="window.open('https://www.voth000.fi/installationswagg.pdf','Swagg');">
+                    <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" 
+                    src="./video/9.mp4" class="lazy-video"></video> 
+                </div> 
+                 <div class="tit">
+                     <div id="tag">#Vj</div>
+                     <div id="tag">#Touch Designer</div>
+                 </div>
+                 </div>
+                 
+                        </div>
+</div>
+
+<div class="card">
+        <div class="accordion">
+            <div><b>Live Event</b></div>
+            <span></span>
+        </div>
+        <div class="panel hidden">
+            <div class="work">
+                <div class="name"> {12.04.2025} Myyränhengitys klubi </div>
+                <div class="link" onclick="window.open('https://voth000.fi/onda.html/','onda');">
+                    <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" 
+                    src="./video/onda/onda3.mp4" class="lazy-video"></video> 
+                </div> 
+                 <div class="tit">
+                     <div id="tag">#Vj</div>
+                     <div id="tag">#Touch Designer</div>
+                 </div>
+                 </div>
+                 <div class="work">
+                    <div class="name"> <i>{01.02.2025}</i> Blu.ug</div>
+                    <div class="link" onclick="window.open('https://www.instagram.com/p/DFMtfbztgga/','blucrew instagram post');">
+                        <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./assets/bluvid.mp4" alt="blu reels"> </video>
+                    </div> 
+                     <div class="tit">
+                         <div id="tag">#Vj</div>
+                         <div id="tag">✨: Blender</div>
+                     </div>
+                     </div>
+                     <div class="work">
+                        <div class="name"> {24.11.2024} blu.ug</div>
+                        <div class="link" onclick="window.open('https://www.instagram.com/p/DB-_nFmN3cV/','Swagg');">
+                            <img src="./assets/11.webp" alt="">
+                        </div> 
+                         <div class="tit">
+                             <div id="tag">#Vj</div>
+                             <div id="tag">#Touch Designer</div>
+                         </div>
+                         </div>
+                 <div class="work">
+                    <div class="name"> {08.06.2024} Blu.ug Vj Sets</div>
+                    <div class="link" onclick="window.open('https://voth000.fi/blu.html/','blu');">
+                        <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/blu3.mp4" class="lazy-video"></video>  
+                    </div> 
+                     <div class="tit">
+                         <div id="tag">#Vj</div>
+                         <div id="tag">#Touch Designer</div>
+                     </div>
+                     </div>
+                     <div class="work">
+                        <div class="name"> {08.2024} SWAGG20</div>
+                        <div class="link" onclick="window.open('https://www.instagram.com/p/C8Kk5prtu1w/?img_index=1','Swagg');">
+                            <img src="./assets/04.webp" alt="">
+                        </div> 
+                         <div class="tit">
+                             <div id="tag">#Vj</div>
+                             <div id="tag">#Touch Designer</div>
+                         </div>
+                         </div>
+                         <div class="work">
+                            <div class="name"> {03.2024} Cuntykuma Vj set </div>
+                            <div class="link" onclick="window.open('https://www.instagram.com/p/C7JvK54Nf3I/?img_index=1','Swagg');">
+                                <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/kat.mp4" class="lazy-video"></video>  
+                            </div> 
+                             <div class="tit">
+                                 <div id="tag">#Vj</div>
+                                 <div id="tag">#Touch Designer</div>
+                             </div>
+                             </div>
+
+                            </div>
+    </div>
+
+    <div class="card">
+        <div class="accordion">
+            <div><b>Animation</b></div>
+            <span></span>
+        </div>
+        <div class="panel hidden">
+
+              <div class="work">
+                    <div class="name"> <i>{2025}</i> Circadian EP </div>
+                    <div class="link" onclick="window.open('https://voth000.fi/o.html','circadian breakdown');">
+                        <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./o.mp4" alt="ads reels"> </video>
+                    </div> 
+                     <div class="tit">
+                         
+                         <div id="tag">✨: Blender</div>
+                         <div id="tag">✨: Touch Designer</div>
+                     </div>
+                     </div>
+            <div class="work">
+                <div class="name"> <i>{2025}</i> Nonsense ads series </div>
+                <div class="link" onclick="window.open('https://voth000.fi/ads.html','nonsense ads breakdown');">
+                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/ads.mp4" alt="ads reels"> </video>
+                </div> 
+                 <div class="tit">
+                     <div id="tag">✨: Blender</div>
+                     <div id="tag">✨: Touch Designer</div>
+                 </div>
+                 </div>
+               
+                 <div class="work">
+                    <div class="name"> <i>{2025}</i> @bapxao.oi 2025 </div>
+                    <div class="link" onclick="window.open('https://www.instagram.com/p/DGLTAtfJliw/','nonsense ads breakdown');">
+                        <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/ny.mp4" alt="ads reels"> </video>
+                    </div> 
+                     <div class="tit">
+                         <div id="tag">✨: Blender</div>
+                         <div id="tag">✨: Touch Designer</div>
+                     </div>
+                     </div>
+                     <div class="work">
+                        <div class="name"> Blu-ug Vj</div>
+                        <div class="link" onclick="window.open('https://voth000.fi/blu.html/','blu');">
+                            <video playsinline autoplay muted loop id="video1" style="width:100%; height=100%" src="./video/blu4.mp4" class="lazy-video"></video>  
+                        </div> 
+                         <div class="tit">
+                             <div id="tag">#Vj</div>
+                             <div id="tag">#TouchDesigner</div>
+                         </div>
+                         </div>
+                         <div class="work">
+                            <div class="name"> <i>{2025}</i> Blu.ug reel promos</div>
+                            <div class="link" onclick="window.open('https://www.instagram.com/p/DFMtfbztgga/','blucrew instagram post');">
+                                <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./assets/bluvid.mp4" alt="blu reels"> </video>
+                            </div> 
+                             <div class="tit">
+                                 <div id="tag">#3D</div>
+                                 <div id="tag">✨: Blender</div>
+                             </div>
+                             </div>
+                        
+        </div>
+    </div>
+
+    <div id="3d" class="card">
+        <div class="accordion">
+            <div><b>3D</b></div>
+         
+            <span></span>
+        </div>
+        <div class="panel hidden">
+            <div class="work">
+                <div class="name"> <i>{2025}</i> Unity Tutorial </div>
+                <div class="link" onclick="window.open('https://voth000.fi/unity.html','unitytutoriallink');">
+                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./assets/unity/unity.mp4" alt="unity video"> </video>
+                </div> 
+                 <div class="tit">
+                     
+                     <div id="tag">✨: Blender</div>
+                     <div id="tag">✨: Unity</div>
+                 </div>
+                 </div>
+            <div class="work">
+                <div class="name"> <i>{2025}</i> Nonsense ads series </div>
+                <div class="link" onclick="window.open('https://voth000.fi/ads.html','nonsense ads breakdown');">
+                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/ads.mp4" alt="ads reels"> </video>
+                </div> 
+                 <div class="tit">
+                     
+                     <div id="tag">✨: Blender</div>
+                     <div id="tag">✨: Touch Designer</div>
+                 </div>
+                 </div>
+            <div class="work">
+                <div class="name"> <i>{2025}</i> Blu.ug reel promos</div>
+                <div class="link" onclick="window.open('https://www.instagram.com/p/DFMtfbztgga/','blucrew instagram post');">
+                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./assets/bluvid.mp4" alt="blu reels"> </video>
+                </div> 
+                 <div class="tit">
+                     <div id="tag">#3D</div>
+                     <div id="tag">✨: Blender</div>
+                 </div>
+                 </div>
+                 <div class="work fullscreen-enabled">
+                    <div class="name"> <i>{2025}</i> Snake</div>
+                    <div class="link"><div class="fs-container"><img src="./assets/snake.webp" alt="snake3d"> <button class="closeFullscreenBtn">✕ Close</button></div></div> 
+                     <div class="tit">
+                         <div id="tag">#3D</div>
+                         <div id="tag">✨: Blender</div>
+                     </div>
+                     </div>
+                     <div class="work fullscreen-enabled">
+                        <div class="name"> <i>{2024}</i> Event Poster</div>
+                        <div class="link"><div class="fs-container"><img src="./assets/poster.webp" alt="Eventposter"> <button class="closeFullscreenBtn">✕ Close</button></div></div> 
+                         <div class="tit">
+                             <div id="tag">#3D</div>
+                             <div id="tag">✨: Blender</div>
+                         </div>
+                         </div>
+                         <div class="work fullscreen-enabled">
+                            <div class="name"> <i>{2024}</i> Loop</div>
+                            <div class="link">
+                                <div class="fs-container">
+                                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./assets/loop.mp4" alt="loop animation"></video>
+                                    <button class="closeFullscreenBtn">✕ Close</button>
+                                </div>
+                            </div> 
+                             <div class="tit">
+                                <div id="tag">#3D</div>
+                                <div id="tag">✨: Blender</div>
+                             </div>
+                             </div>
+                             <div class="work fullscreen-enabled">
+                                <div class="name"> <i>{2024}</i> Logo</div>
+                                <div class="link">
+                                    <div class="fs-container">
+                                        <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./assets/2.mp4" alt="logo animation"></video>
+                                        <button class="closeFullscreenBtn">✕ Close</button>
+                                    </div>
+                            </div> 
+                                 <div class="tit">
+                                     <div id="tag">#3D</div>
+                                     <div id="tag">✨: Blender</div>
+                                     <div id="tag">✨: Touch Designer</div>
+                                 </div>
+                            </div> 
+                            <div class="work fullscreen-enabled">
+                                <div class="name"> <i>{2023}</i> Album Cover</div>
+                                <div class="link"> <div class="fs-container">
+                                    <img src="./assets/Cover.webp" alt="Album Cover">
+                                    <button class="closeFullscreenBtn">✕ Close</button>
+                                </div> </div>
+                                 <div class="tit">
+                                     <div id="tag">#3D</div>
+                                     <div id="tag">✨: Blender</div>
+                                 </div>
+                                 </div>    
+                                 <div class="work">
+                                    <div class="name"> <i>{2022}</i> Animation Series</div>
+                                    <div class="link" onclick="window.open('https://www.youtube.com/watch?v=PZkL-6jITFw&list=PLt5rgC2HB9V0wIqMlHiHjZ9CiQyiTwOuv&index=1','3Danimations');">
+                                        <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/7.mp4" alt="anininja"> </video>
+                                     </div> 
+                                     <div class="tit">
+                                         <div id="tag">#3D</div>
+                                         <div id="tag">✨: Blender</div>
+                                     </div>
+                                     </div>     
+                                     <div class="work">
+                                        <div class="name"> <i>{2022}</i> Small Game</div>
+                                        <div class="link" onclick="window.open('https://voth000.github.io/archive101/','ArchivePage');">
+                                            <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/6.mp4" alt="anininja"> </video>
+                                        </div> 
+                                         <div class="tit">
+                                             <div id="tag">#3D</div>
+                                             <div id="tag">✨: Blender</div>
+                                             <div id="tag">✨: Three Js</div>
+                                         </div>
+                                         </div>    
+                                         <div class="work">
+                                            <div class="name"> <i>{2022}</i>Web 3D Objects</div>
+                                            <div class="link" onclick="window.open('https://voth000.github.io/3Ditemstown/','heart3D');">
+                                                <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/3d2.mp4" alt="Pointcloud3D"> </video>
+                                            </div> 
+                                             <div class="tit">
+                                                 <div id="tag">#3D</div>
+                                                 <div id="tag">✨: Blender</div>
+                                                 <div id="tag">✨: Three Js</div>
+                                             </div>
+                                             </div>  
+                                             <div class="work">
+                                                <div class="name"> Ninja lead <i>{3D Model & Texture}</i></div>
+                                                <div class="link" onclick="window.open('https://voth000.github.io/3Ditemsninja/','heart3D');">
+                                                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/3d3.mp4" alt="Ninjalead"> </video>
+                                                </div> 
+                                                 <div class="tit">
+                                                     <div id="tag">#3D</div>
+                                                     <div id="tag">✨: Blender</div>
+                                                     <div id="tag">✨: Three Js</div>
+                                                 </div>
+                                                 </div> 
+                                                 <div class="work">
+                                                    <div class="name"> Spike Heart  <i>{3D}</i></div>
+                                                    <div class="link" onclick="window.open('https://voth000.github.io/3Ditemsheart/','Heart');">
+                                                        <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/3d1.mp4" alt="Ninjalead"> </video>
+                                                    </div> 
+                                                     <div class="tit">
+                                                         <div id="tag">#3D</div>
+                                                         <div id="tag">✨: Blender</div>
+                                                         <div id="tag">✨: Three Js</div>
+                                                     </div>
+                                                     </div> 
+                                    
+                                
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="accordion">
+            <div><b>Print</b></div>
+            <span></span>
+        </div>
+        <div class="panel hidden">
+            <div class="work">
+                <div class="name"> Ninjalead Sticker Set</div>
+                <div class="link" onclick="window.open('https://voth000.github.io/ninjalead/','sticker');">
+                    <video playsinline autoPlay muted id="video1" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./video/sti.mp4" alt="sticker"> </video>
+                </div> 
+                 <div class="tit">
+                     <div id="tag">#3D</div>
+                     <div id="tag">✨: Blender</div>
+                 </div>
+                 </div>
+            
+        </div>
+    </div>
+
+    </div>
+
+    </section>
+  
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const fsWorks = document.querySelectorAll('.work.fullscreen-enabled');
+
+    fsWorks.forEach(work => {
+        work.addEventListener('click', () => {
+            const container = work.querySelector('.fs-container');
+            const btn = container.querySelector('.closeFullscreenBtn');
+
+            const requestFullscreen = container.requestFullscreen || container.webkitRequestFullscreen || container.msRequestFullscreen;
+            if (requestFullscreen) {
+                requestFullscreen.call(container);
+            }
+
+            btn.style.display = 'block';
+        });
+    });
+
+    const allBtns = document.querySelectorAll('.closeFullscreenBtn');
+    allBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const exit = document.exitFullscreen || document.webkitExitFullscreen || document.msExitFullscreen;
+            if (exit) {
+                exit.call(document);
+            }
+        });
+    });
+
+    document.addEventListener('fullscreenchange', toggleBtns);
+    document.addEventListener('webkitfullscreenchange', toggleBtns);
+    document.addEventListener('msfullscreenchange', toggleBtns);
+
+    function toggleBtns() {
+        const isFullscreen = document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement;
+        document.querySelectorAll('.closeFullscreenBtn').forEach(btn => {
+            btn.style.display = isFullscreen ? 'block' : 'none';
+        });
+    }
+});
+        </script>
+        
+</body>
+</html>

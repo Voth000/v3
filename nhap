@@ -1,0 +1,1372 @@
+#s1 {
+top:20%;
+left: 20%;
+}
+
+#s2 {
+    top:80%;
+    left: 40%;
+    }
+
+    #s3 {
+        top:60%;
+        right: 20%;
+        }
+        #s4 {
+            top:10%;
+            right: 30%;
+            }
+    
+            onmousemove = function(e){
+ 
+
+                //meat and potatoes of the snippet
+                var pos = e;
+                var dot;
+                dot = document.createElement('div');
+                dot.className = "dot";
+                dot.style.left = pos.x + "px";
+                dot.style.top = pos.y + "px";
+                document.body.appendChild(dot);
+              }      
+
+
+             
+              let activeIndex2 = 0;
+              
+              function switchButton(event) {
+                 
+              
+                  const bebes = document.querySelectorAll('.bebe');
+                  bebes[activeIndex2].classList.remove('active'); 
+                  if (event.type === 'wheel') {
+                      activeIndex2 = (activeIndex2 + (event.deltaY > 0 ? 1 : -1) + bebes.length) % bebes.length; 
+                  } else if (event.type === 'mouseover') {
+                    activeIndex2 = Array.from(buttons).indexOf(event.target); 
+                  }
+                  bebes[activeIndex2].classList.add('active'); 
+              
+                  setTimeout(() => {
+                    
+                      bebes[activeIndex2].classList.add('active');
+                  }, 20); 
+              }
+              
+              
+              window.addEventListener('wheel', switchButton);
+
+
+
+              const maxScrollDownModel = 4; // Maximum allowed scrolls down in the #model div
+let scrollDownCountModel = 0; // Count for scrolling down in the #model div
+let currentDivIndex = 0; // Index of the currently active div
+const divs = document.querySelectorAll('.section'); // Select all sections
+const container = document.getElementById('scrollContainer'); 
+function onWheel(event) {
+    if (currentDivIndex === 0) { // When in the #model div
+        event.preventDefault(); 
+
+        if (event.deltaY > 0) { 
+            if (scrollDownCountModel < maxScrollDownModel) {
+                scrollDownCountModel++;
+                container.scrollTop += event.deltaY; 
+            } else {
+                if (currentDivIndex < divs.length - 1) {
+                    currentDivIndex++;
+                    container.scrollTop = divs[currentDivIndex].offsetTop;
+                    scrollDownCountModel = 0; 
+                }
+            }
+        } else { 
+            if (scrollDownCountModel > 0) {
+                scrollDownCountModel--;
+                container.scrollTop += event.deltaY; 
+            } else if (currentDivIndex > 0) {
+                currentDivIndex--;
+                container.scrollTop = divs[currentDivIndex].offsetTop;
+            }
+        }
+    } else { 
+    }
+}
+window.addEventListener('wheel', onWheel, { passive: false });
+container.scrollTop = 0; 
+
+
+<div class="bio">
+<span> Hei, I'm Voth, a generalist graphic designer based in Tampere 🇫🇮 & Saigon 🇻🇳 </span>
+</div> 
+
+.bio {
+    
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+
+.bio span {
+    display: block;
+    font-size: 12px;
+  letter-spacing: 0.1rem;
+  font-family: "IBM Plex Mono", monospace;
+  color: #000000;
+  border-right: 2px dashed #54545485;
+  width: 100%;
+  text-wrap: wrap;
+  overflow: hidden;
+height:fit-content;
+  /* steps needs to equal the exact amount of characters in the paragraph. See https://wordcounter.net/character-count for easy counting. */
+
+  animation: typing 2s steps(81), cursor 0.1s step-end infinite alternate;
+}
+
+.bio {
+    width: fit-content;
+    display: inline-block;
+    height: fit-content;
+ max-width: 10%;
+}
+
+
+@keyframes cursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes typing {
+  from {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+#t1 .bio {
+  
+    position: absolute;
+    top: 0%;
+    right: 1%;
+}
+
+
+
+
+const maxScrollDownModel = 4; // Maximum allowed scrolls down in the #model div
+let scrollDownCountModel = 0; // Count for scrolling down in the #model div
+let currentDivIndex = 0; // Index of the currently active div
+const divs = document.querySelectorAll('.section'); // Select all sections
+const container = document.getElementById('scrollContainer'); 
+function onWheel(event) {
+    if (currentDivIndex === 0) {
+      event.preventDefault(); 
+        if (event.deltaY > 0) { 
+            if (scrollDownCountModel < maxScrollDownModel) {
+                scrollDownCountModel++;
+                container.scrollTop += event.deltaY; 
+            } else {
+                if (currentDivIndex < divs.length - 1) {
+                    currentDivIndex++;
+                    container.scrollTop = divs[currentDivIndex].offsetTop;
+                    scrollDownCountModel = 0; 
+                }
+            }
+        } else { 
+            if (scrollDownCountModel > 0) {
+                scrollDownCountModel--;
+                container.scrollTop += event.deltaY; 
+            } else if (currentDivIndex > 0) {
+                currentDivIndex--;
+                container.scrollTop = divs[currentDivIndex].offsetTop;
+            }
+        }
+    }
+}
+window.addEventListener('wheel', onWheel, { passive: false });
+container.scrollTop = 0; 
+
+
+let activeIndex = 0;
+let activeIndex1 = 0;
+let activeIndex2 = 0;
+function switchButton(event) {
+    const buttons = document.querySelectorAll('.main1');
+    buttons[activeIndex].classList.remove('active'); 
+
+
+    if (event.type === 'wheel') {
+        //activeIndex = (activeIndex + (event.deltaY > 0 ? 1 : -1) + buttons.length) % buttons.length; 
+    } 
+    
+    else if (event.type === 'mouseover') {
+        activeIndex = Array.from(buttons).indexOf(event.target); 
+    }
+    buttons[activeIndex].classList.add('active'); 
+
+
+
+    const boxs = document.querySelectorAll('.main2');
+    boxs[activeIndex1].classList.remove('active'); 
+    if (event.type === 'wheel') {
+       // activeIndex1 = (activeIndex1 + (event.deltaY > 0 ? 1 : -1) + boxs.length) % boxs.length; 
+    } else if (event.type === 'mouseover') {
+        activeIndex1 = Array.from(buttons).indexOf(event.target); 
+    }
+    boxs[activeIndex1].classList.add('active'); 
+
+    const bebes = document.querySelectorAll('.bebe');
+    bebes[activeIndex2].classList.remove('active'); 
+    if (event.type === 'wheel') {
+       // activeIndex2 = (activeIndex2 + (event.deltaY > 0 ? 1 : -1) + bebes.length) % bebes.length; 
+    } else if (event.type === 'mouseover') {
+      activeIndex2 = Array.from(buttons).indexOf(event.target); 
+    }
+    bebes[activeIndex2].classList.add('active'); 
+
+
+    gsap.fromTo(bebes[activeIndex2], 
+      { y: 100, opacity: 0 }, 
+      { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.5, 
+          ease: "power2.out"
+      }
+  );
+
+    setTimeout(() => {
+        buttons[activeIndex].classList.add('active');
+        boxs[activeIndex1].classList.add('active');
+        bebes[activeIndex2].classList.add('active');
+    }, 20); 
+}
+
+
+window.addEventListener('wheel', switchButton);
+
+
+
+<div id="vfx">
+  <div class="mot" id="transtop"></div>
+  <video class="mot" playsinline autoplay muted id="bgvideo" style="width:100%; height=100%" autoplay="autoPlay" loop="true" src="./3.mp4" alt="play1"> </video>
+  <div class="mot" id="transbot"></div>
+</div>
+
+
+
+///glb2
+import * as THREE from 'https://unpkg.com/three@0.139.2/build/three.module.js';
+
+import {GLTFLoader} from "./GLTFLoader.js";
+
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.121.1/examples/jsm/controls/OrbitControls.js";
+
+import {DragControls} from "./DragControls.js";
+
+
+
+const container = document.getElementById('model');
+const canvas = document.querySelector('.webgl')
+const scene = new THREE.Scene()
+
+let root1;
+const s1 = $('#s1');
+const s2 = $('#s2');
+const s3 = $('#s3');
+const s4 = $('#s4');
+
+
+
+
+
+///glb2
+
+const loader1 = new GLTFLoader()
+loader1.load('./12.glb', function(glb){
+  console.log(glb);
+
+ 
+root1 = glb.scene;
+adjustRootScale(); 
+root1.rotation.y = -0.5;
+root1.name = "root1";
+root1.alpha = true;
+root1.metalness = 0.1;
+root1.visible = true;
+
+root1.traverse(function(node1) {
+    if(node1.isMesh)
+    node1.castShadow = false;
+    node1.receiveShadow = false;
+    node1.opacity = 0.3;
+    
+});
+   scene.add(root1);
+}, function(xhr){
+   console.log(xhr.loaded/xhr.total * 100 + "% loaded")
+}, function(error){
+   console.log("an error has occurred")
+})
+
+
+//light
+const light = new THREE.AmbientLight(0xFFFFFF, 2)
+light.position.set(12,20,5)
+
+scene.add(light)
+
+const al = new THREE.AmbientLight(0xFFFFFF, 0.4)
+al.position.set(-20,-20,-5)
+
+scene.add( al )
+
+
+//Create a plane that receives shadows (but does not cast them)
+//const planeGeometry = new THREE.PlaneGeometry( 40, 30, 32, 32 );
+//const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xFFFFFF } )
+//const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+//plane.receiveShadow = true;
+//plane.position.y = -3;
+//plane.rotateX( - Math.PI / 2);
+//scene.add( plane );
+///grid
+
+const grid = new THREE.GridHelper(0,0);
+scene.add( grid );
+//Boiler 
+
+const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight
+}
+
+//camera
+const camera = new THREE.PerspectiveCamera(45, sizes.width/sizes.height, 0.1, 1000)
+camera.position.set(0,5,12)
+camera.lookAt(scene.position)
+scene.add(camera)
+
+
+
+const renderer = new THREE.WebGL1Renderer({
+    antialias: true,
+    canvas: canvas,
+    alpha: true
+})
+
+///plane
+
+
+
+///orbit
+let controls;
+
+controls = new OrbitControls(camera, renderer.domElement);
+controls.autoRotate = false;
+controls.enableZoom = false;
+
+
+
+
+
+let radius;
+const segments = 64;
+const points = [];
+
+
+// Function to calculate the radius based on viewport size
+function calculateRadius() {
+    if (window.innerWidth < 500 || window.innerHeight < 500) {
+        return Math.min(window.innerWidth / 1.75, window.innerHeight / 1.75) * 0.015;
+    } else {
+        return Math.min(window.innerWidth / 1.25, window.innerHeight / 1.25) * 0.015;
+    }
+}
+
+// Function to update circle points based on the current radius
+function updateCirclePoints() {
+    radius = calculateRadius();
+    points.length = 0; // Clear previous points
+    for (let i = 0; i <= segments; i++) {
+        const theta = (i / segments) * 2 * Math.PI;
+        points.push(new THREE.Vector3(radius * Math.cos(theta), radius * Math.sin(theta), 0));
+    }
+    geometry.setFromPoints(points);
+}
+
+const geometry = new THREE.BufferGeometry().setFromPoints(points);
+const material = new THREE.LineBasicMaterial({ color: 0x292929 });
+
+// Create the final object to add to the scene
+const circle = new THREE.LineLoop(geometry, material);
+
+// Apply transformations (rotate and scale)
+circle.rotation.x = Math.PI / -2; // Rotate 45 degrees around the X axis
+circle.rotation.y = Math.PI / -8; // Rotate 45 degrees around the Y axis
+circle.scale.set(0.5, 0.5, 0.5); // Scale the circle by 1.5 in all directions
+circle.position.y= 1;
+scene.add(circle);
+
+// Create the final object to add to the scene
+const circle1 = new THREE.LineLoop(geometry, material);
+
+// Apply transformations (rotate and scale)
+circle1.rotation.x = Math.PI / -2; // Rotate 45 degrees around the X axis
+circle1.rotation.y = Math.PI / -8; // Rotate 45 degrees around the Y axis
+circle1.scale.set(0.5, 0.5, 0.5); // Scale the circle by 1.5 in all directions
+circle1.position.y= 1;
+scene.add(circle1);
+
+let activeIndex = 0;
+//responsive
+// Function to position buttons based on circle points
+function positionButtons() {
+    const buttons = document.querySelectorAll('.main1');
+    const boxs = document.querySelectorAll('.main2');
+
+    const buttonPoints = [34, 48, 2, 18]; // Indices of circle points to use for buttons
+
+    buttonPoints.forEach((pointIndex, i) => {
+        const vector = points[pointIndex].clone();
+        vector.applyMatrix4(circle.matrixWorld); // Apply the circle's transformations
+        vector.project(camera); // Project the vector to screen space
+
+        const x = (vector.x * 0.5 + 0.5) * container.clientWidth;
+        const y = (vector.y * -0.5 + 0.5) * container.clientHeight;
+
+        const x1 = (vector.x * 0.5 + 0.5) * container.clientWidth - 40;
+        const y1 = (vector.y * -0.5 + 0.5) * container.clientHeight + 20;
+
+        const button = buttons[i];
+        button.style.left = `${x}px`;
+        button.style.top = `${y}px`;
+
+        const box = boxs[i];
+        box.style.left = `${x1}px`;
+        box.style.top = `${y1}px`;
+    });
+    
+}
+
+const buttonPoints = [40];
+
+// Function to position the arrow
+function positionArrow() {
+    const arrow = document.querySelector('.arrow');
+    const pointIndex = buttonPoints[activeIndex];
+
+    const vector = points[pointIndex].clone();
+    vector.applyMatrix4(circle1.matrixWorld);
+    vector.project(camera);
+
+    const x = (vector.x * 0.5 + 0.5) * container.clientWidth ; // Add 2px offset if needed
+    const y = (vector.y * -0.5 + 0.5) * container.clientHeight ; // Add 2px offset if needed
+
+    arrow.style.left = `${x}px`;
+    arrow.style.top = `${y}px`;
+}
+
+
+// Initial positioning
+// Function to adjust root1 scale based on window width
+function adjustRootScale() {
+    if (root1) {
+        if (window.innerWidth < 500) {
+            root1.scale.set(3, 3, 3);
+            root1.position.set(0, -3, 0); 
+        } else {
+            root1.scale.set(5, 5, 5);
+            root1.position.set(-0.5, -6.5, 0);  
+        }
+    }
+}
+
+
+
+
+let targetRotationY = -0;
+const rotationSpeed = 0; 
+let wheelEventTriggered = false;
+// Adjust this value for faster/slower interpolation
+
+function onMouseWheel(event) {
+
+    const delta = Math.sign(event.deltaY);
+    targetRotationY += delta * 1.5; // Update target rotation
+    activeIndex = (activeIndex + delta + buttonPoints.length) % buttonPoints.length;
+    wheelEventTriggered = true;
+}
+
+//renderer.domElement.addEventListener('wheel', onMouseWheel);
+
+renderer.setSize(window.innerWidth,window.innerHeight)
+renderer.physicallyCorrectLights = true;
+renderer.gammaOutput =  true;
+renderer.gammaFactor =  1;
+
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 4))
+renderer.shadowMap.enabled = true
+renderer.render(scene,camera)
+renderer.setClearColor( 0xffffff, 0)
+document.getElementById('model').appendChild( renderer.domElement );
+
+
+
+
+
+window.addEventListener('resize', () => {
+
+        // Adjust circle radius based on viewport size
+        radius = calculateRadius();
+        updateCirclePoints(); // Recalculate circle points
+    
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
+
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+     updateCirclePoints();
+    positionButtons();
+    positionArrow(); 
+    adjustRootScale(); 
+    // renderer.render(scene, camera); // -> Not needed since it is called in animate()
+});
+
+updateCirclePoints();
+positionButtons();
+positionArrow(); 
+///
+s2.hover(
+    () => {
+    if(root1)
+        gsap.to(root1.rotation, { y: 0.75, duration: 1.5 });
+    //wheelEventTriggered = false;
+},
+() => { }
+);
+
+
+s1.hover(() => {
+    gsap.to
+    if(root1)
+        gsap.to(root1.rotation, { y: -0.5, duration: 1.5 });
+   // wheelEventTriggered = false;
+},
+() => { }
+);
+
+s3.hover(
+    () => {
+    if(root1)
+        gsap.to(root1.rotation, { y: 2.5, duration: 1.5 });
+   // wheelEventTriggered = false;
+},
+() => { }
+);
+
+s4.hover(
+    () => {
+    if(root1)
+        gsap.to(root1.rotation, { y: 3.5, duration: 1.5 });
+   // wheelEventTriggered = false;
+},
+() => { }
+);
+
+
+function animate(){
+    circle1.rotation.z += 0.007;
+requestAnimationFrame(animate);
+//if (root1) {
+    // Only interpolate rotation if the wheel event has been triggered
+  //  if (wheelEventTriggered) {
+  //      root1.rotation.y += (targetRotationY - root1.rotation.y) * rotationSpeed;
+  //  }
+//}
+updateCirclePoints();
+positionButtons();
+positionArrow(); 
+controls.update();
+renderer.render(scene,camera)
+}
+animate()
+
+
+updateCirclePoints();
+positionButtons();
+positionArrow(); 
+
+
+
+const next = document.querySelector('#next');
+const container2 = document.querySelector('#glcanvas');
+const bodiv = document.querySelector('#bo');
+const recdiv = document.querySelector('#rec');
+
+next.addEventListener('mouseover', () => {
+container1.style.filter = "brightness(1.4) blur(18px)";
+container1.style.transition = "filter 0.6s ease";
+container2.style.filter = "brightness(1.4) blur(18px)";
+container2.style.transition = "filter 0.6s ease";
+
+});
+
+
+next.addEventListener('mouseleave', () => {
+container1.style.filter = "brightness(1.8) grayscale(0.5) opacity(0.6) drop-shadow(4px 4px 6px rgba(255, 255, 255, 0.745))";
+container2.style.filter = "opacity(0.6) brightness(1.5)";
+
+});  
+
+
+bodiv.addEventListener('mouseover', () => {
+recdiv.style.filter = "brightness(1.4) blur(18px)";
+recdiv.style.transition = "filter 0.6s ease";
+});
+
+
+bodiv.addEventListener('mouseleave', () => {
+recdiv.style.filter = "";
+
+});
+
+
+
+var dotLimit = 2000;
+  var dots = [];
+onmousemove = function(e){
+ 
+  document.onmousemove = function(e) {
+    var dot = document.createElement('div');
+    dot.className = "dot";
+    dot.style.left = e.pageX + "px";
+    dot.style.top = e.pageY + "px";
+    document.body.appendChild(dot);
+    dots.push(dot);
+    if (dots.length > dotLimit) {
+      var oldestDot = dots.shift();
+      document.body.removeChild(oldestDot);
+    } 
+  };
+};
+
+
+
+<img src="./assets/Lof.webp" alt="lofficiellogo"> 
+<img src="./assets/lab.webp" alt="thelablogo">
+    <img src="./assets/swg.webp" alt="swaglogo">
+    <img src="./assets/ug.webp" alt="blulogo">
+    <img src="./assets/ini.webp" alt="aaltounilogo"></img>
+
+
+    // Set initial properties for grid items
+gsap.set(gridItems, { opacity: 0, y: 50 });
+
+// Create a timeline for the staggered reveal animation
+const revealGrid = gsap.timeline({ paused: true });
+
+revealGrid.to(gridItems, {
+  opacity: 1,
+  y: 0,
+  duration: 0.6,
+  stagger: 0.2, // Stagger each item's animation by 0.2 seconds
+  ease: "power4.out",
+});
+
+
+revealGrid.play();
+
+// Hover Effect: Scale Animation on Hover
+gridItems.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    gsap.to(item, {
+      scale: 1.1,
+      duration: 0.3,
+      ease: "power2.out",
+    });
+  });
+
+  item.addEventListener('mouseleave', () => {
+    gsap.to(item, {
+      scale: 1,
+      duration: 0.3,
+      ease: "power2.in",
+    });
+  });
+});
+
+
+
+
+let activeIndex = 0;
+let activeIndex1 = 0;
+let activeIndex2 = 0;
+function switchButton(event) {
+    const buttons = document.querySelectorAll('.main1');
+    buttons[activeIndex].classList.remove('active'); 
+
+
+    if (event.type === 'wheel') {
+        //activeIndex = (activeIndex + (event.deltaY > 0 ? 1 : -1) + buttons.length) % buttons.length; 
+    } 
+    
+    else if (event.type === 'mouseover') {
+        activeIndex = Array.from(buttons).indexOf(event.target); 
+    }
+    buttons[activeIndex].classList.add('active'); 
+
+
+
+    const boxs = document.querySelectorAll('.main2');
+    boxs[activeIndex1].classList.remove('active'); 
+    if (event.type === 'wheel') {
+       // activeIndex1 = (activeIndex1 + (event.deltaY > 0 ? 1 : -1) + boxs.length) % boxs.length; 
+    } else if (event.type === 'mouseover') {
+        activeIndex1 = Array.from(buttons).indexOf(event.target); 
+    }
+    boxs[activeIndex1].classList.add('active'); 
+
+    const bebes = document.querySelectorAll('.bebe');
+    bebes[activeIndex2].classList.remove('active'); 
+    if (event.type === 'wheel') {
+       // activeIndex2 = (activeIndex2 + (event.deltaY > 0 ? 1 : -1) + bebes.length) % bebes.length; 
+    } else if (event.type === 'mouseover') {
+      activeIndex2 = Array.from(buttons).indexOf(event.target); 
+    }
+    bebes[activeIndex2].classList.add('active'); 
+
+
+    gsap.fromTo(bebes[activeIndex2], 
+      { y: 100, opacity: 0 }, 
+      { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.5, 
+          ease: "power2.out"
+      }
+  );
+
+    setTimeout(() => {
+        buttons[activeIndex].classList.add('active');
+        boxs[activeIndex1].classList.add('active');
+        bebes[activeIndex2].classList.add('active');
+    }, 20); 
+}
+
+
+//window.addEventListener('wheel', switchButton);
+
+const buttons = document.querySelectorAll('.main1');
+buttons.forEach(button => {
+    button.addEventListener('mouseover', switchButton);
+});
+
+
+
+
+let isHovering = false; // Flag to track hover state globally
+
+function autoSwitchButton() {
+    if (isHovering) return; // Skip the auto-switching if hovering
+
+    const buttons = document.querySelectorAll('.main1');
+    const boxs = document.querySelectorAll('.main2');
+    const bebes = document.querySelectorAll('.bebe');
+
+    buttons[activeIndex].classList.remove('active');
+    boxs[activeIndex1].classList.remove('active');
+    bebes[activeIndex2].classList.remove('active');
+
+    // Increment active index and loop back to 0 if it exceeds the length
+    activeIndex = (activeIndex + 1) % buttons.length;
+    activeIndex1 = (activeIndex1 + 1) % boxs.length;
+    activeIndex2 = (activeIndex2 + 1) % bebes.length;
+
+    buttons[activeIndex].classList.add('active');
+    boxs[activeIndex1].classList.add('active');
+    bebes[activeIndex2].classList.add('active');
+
+    gsap.fromTo(bebes[activeIndex2], 
+      { y: 100, opacity: 0 }, 
+      { 
+          y: 0, 
+          opacity: 1, 
+          duration: 0.5, 
+          ease: "power2.out"
+      });
+}
+
+setInterval(autoSwitchButton, 2000);
+
+
+background-image: url(./assets/0001.webp);
+
+<div>
+                <div id="tag">Creative-Coding</div>
+                <div id="tag">UI Design</div>
+                
+            </div>
+
+
+
+
+            import {
+    simulationVertexShader,
+    simulationFragmentShader,
+    renderVertexShader,
+    renderFragmentShader,
+} from "./shaders.js"
+
+document.addEventListener("DOMContentLoaded", () => {
+const scene = new THREE.Scene();
+const simScene = new THREE.Scene();
+
+const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+const renderer = new THREE.WebGLRenderer({
+    antialias: true,
+    alpha: true,
+    preserveDrawingBuffer: true,
+});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window,innerHeight);
+document.body.appendChild(renderer.domElement);
+
+const mouse = new THREE.Vector2();
+let frame = 0;
+
+const width = window.innerWidth * window.devicePixelRatio;
+const height = window.innerHeight * window.devicePixelRatio;
+const options = {
+    format: THREE.RGBAFormat,
+    type: THREE.FloatType,
+    minFilter: THREE.LinearFilter,
+    magFilter: THREE.LinearFilter,
+    stencilBuffer: false,
+    depthBuffer: false,
+};
+
+let rtA = new THREE.WebGLRenderTarget( width, height, options);
+let rtB = new THREE.WebGLRenderTarget( width, height, options);
+
+const simMaterial = new THREE.ShaderMaterial({
+    uniforms: {
+        textureA: { value: null },
+        mouse: { value: mouse },
+        resolution: { value: new THREE.Vector2(width, height) },
+        time: { value: 0 },
+        frame: { value: 0 },
+    },
+    vertexShader: simulationVertexShader,
+    fragmentShader: simulationFragmentShader,
+});
+
+const renderMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+            textureA: { value: null },
+            textureB: { value: null },
+        },
+        vertexShader: simulationVertexShader,
+        fragmentShader: simulationFragmentShader,
+        transparent: true,
+    });
+
+    const plane = new THREE.PlaneGeometry(2,2);
+    const simQuad = new THREE.Mesh(plane, simMaterial);
+    const renderQuad= new THREE.Mesh(plane, renderMaterial);
+
+    simScene.add(simQuad);
+    scene.add(renderQuad);
+
+    const canvas = document.querySelector('');
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d", { alpha: true });
+
+    ctx.fillStyle = "#fb7427";
+    ctx.fillRect(0, 0, width, height);
+
+    const fontSize = Math.round(250 * window.devicePixelRatio);
+    ctx.fillStyle = "#fef4b8";
+    ctx.font = `bold ${fontSize}px Test Söhne`;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.textRendering = "geometricPrecision";
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    ctx.fillText("testText", width / 2, height / 2);
+
+    const textTexture = new THREE.CanvasTexture(canvas);
+    textTexture.minFilter = THREE.LinearFilter;
+    textTexture.magFilter = THREE.LinearFilter;
+    textTexture.format = THREE.RGBAFormat;
+
+    window.addEventListener("resize", () => {
+        const newWidth = window.innerWidth * window.devicePixelRatio;
+        const newHeight = window.innerHeight * window.devicePixelRatio;
+
+        renderer.setSize(newWidth, newHeight);
+        rtA.setSize(newWidth, newHeight);
+        rtB.setSize(newWidth, newHeight);
+        simMaterial.uniforms.resolution.value.set(newWidth, newHeight);
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        ctx.fillStyle = "#fb7427";
+        ctx.fillRect(0, 0, newWidth, newHeight);
+
+        const newFontSize = Math.round(250 * window.devicePixelRatio);
+        ctx.fillStyle = "#fef4b8";
+        ctx.font = `bold ${fontSize}px Test Söhne`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("testText", width / 2, height / 2);
+        textTexture.needsUpdate = true; 
+    });
+
+renderer.domElement.addEventListener("mousemove", (e) => {
+    mouse.x = e.clientX * window.devicePixelRatio;
+    mouse.y = (window.innerHeight - e.clientY)  * window.devicePixelRatio;
+});
+
+renderer.domElement.addEventListener ("mouseleave", () => {
+    mouse.set(0, 0);
+});
+
+const animate = () => {
+    simMaterial.uniforms.frame.value = frame ++;
+    simMaterial.uniforms.time.value = performance.now() / 1000;
+    simMaterial.uniforms.textureA.value = rtA.texture;
+    renderer.setRenderTarget(rtB);
+    renderer.render(simScene, camera);
+
+    renderMaterial.uniforms.textureA.value = rtB.texture;
+    renderMaterial.uniforms.textureB.value = textTexture;
+    renderer.setRenderTarget(null);
+    renderer.render(scene,camera);
+
+    const temp = rtA;
+    rtA = rtB;
+    rtB = temp;
+
+    requestAnimationFrame(animate);
+};
+animate();
+});
+
+
+
+document.addEventListener("touchstart", (e) => {
+        if (e.target === renderer.domElement) {
+            if (e.touches.length > 0) {
+                updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }
+    }, { passive: true }); // ✅ Allow scrolling
+    
+    document.addEventListener("touchmove", (e) => {
+        if (e.target === renderer.domElement) {
+            if (e.touches.length > 0) {
+                updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }
+    }, { passive: true }); // ✅ Never block scrolling
+    
+    document.addEventListener("touchend", () => {
+        simMaterial.uniforms.mouse.value.set(-10, -10);
+    });
+    
+    { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.4, size: 120 },
+    { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.65, size: 300 },
+    { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 2.45, size: 420 },
+    { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.5, size: 220 },
+    { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.95, size: 380 }
+
+    color = "rgba(255, 0, 0, 0.25)";  // Set the overlap color to red with transparency
+
+
+    const textContainer = document.getElementById("transbot");
+        const text = textContainer.innerText;
+        textContainer.innerHTML = ""; // Clear original text
+
+        // Wrap each letter in a span
+        text.split("").forEach(letter => {
+            let span = document.createElement("span");
+            span.innerText = letter;
+            textContainer.appendChild(span);
+        });
+
+        const spans = document.querySelectorAll(".sd span");
+
+        document.addEventListener("mousemove", (e) => {
+            const mouseX = e.clientX;
+
+            spans.forEach((span, index) => {
+                // Calculate weight dynamically
+                let weight = Math.floor((mouseX / window.innerWidth) * 700) + 200; // 200-900
+                let offset = (index / spans.length) * 300; // Variation per letter
+                let finalWeight = Math.min(900, Math.max(200, weight + offset)); // Keep within range
+                
+                // Incremental stretch factor
+                let baseStretch = 1; // Start at normal scale
+                let stretch = baseStretch + (index * 0.25); // Increase each letter by 0.25 more than the last
+
+                // Apply styles
+                span.style.fontVariationSettings = `'wght' ${finalWeight}`;
+                span.style.transform = `scaleX(${stretch})`;
+                span.style.transform = `scaleY(${stretch})`;
+
+            });
+        });
+
+
+
+  @font-face {
+    font-family: 'F1';
+    src: url("./Font/Sweartext/SwearTextDemo-Thin.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F2';
+    src: url("./Font/Sweartext/SwearTextDemo-ThinCilati.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F3';
+    src: url("./Font/Sweartext/SwearTextDemo-ThinItalic.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F4';
+    src: url("./Font/Sweartext/SwearTextDemo-Light.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F5';
+    src: url("./Font/Sweartext/SwearTextDemo-LightCilati.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F6';
+    src: url("./Font/Sweartext/SwearTextDemo-LightItalic.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F7';
+    src: url("./Font/Sweartext/SwearTextDemo-Regular.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F8';
+    src: url("./Font/Sweartext/SwearTextDemo-Cilati.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F9';
+    src: url("./Font/Sweartext/SwearTextDemo-Italic.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F10';
+    src: url("./Font/Sweartext/SwearTextDemo-Medium.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F11';
+    src: url("./Font/Sweartext/SwearTextDemo-MediumCilati.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F12';
+    src: url("./Font/Sweartext/SwearTextDemo-MediumItalic.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F13';
+    src: url("./Font/Sweartext/SwearTextDemo-Bold.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F14';
+    src: url("./Font/Sweartext/SwearTextDemo-BoldCilati.otf") format('truetype');
+  }
+  @font-face {
+    font-family: 'F15';
+    src: url("./Font/Sweartext/SwearTextDemo-BoldItalic.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F16';
+    src: url("./Font/Sweartext/SwearTextDemo-Black.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F17';
+    src: url("./Font/Sweartext/SwearTextDemo-BlackCilati.otf") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'F18';
+    src: url("./Font/Sweartext/SwearTextDemo-BlackItalic.otf") format('truetype');
+  }
+
+ 
+
+
+
+
+
+const asteroidCanvas = document.getElementById("drawcanvas");
+const context = asteroidCanvas.getContext("2d");
+
+let mouseX = asteroidCanvas.width / 2, mouseY = 0;
+
+function resizeCanvas() {
+  asteroidCanvas.width = window.innerWidth;  // Full screen width
+  asteroidCanvas.height = window.innerHeight;  // Full screen height
+  draw();
+}
+resizeCanvas();
+
+function drawLimaçonShape(context, x, y, size, angle) {
+  context.beginPath();
+  for (let i = 0; i < 80; i++) {
+    let theta = i / 80 * 2 * Math.PI;
+    let r = size * Math.sin(2 * theta);
+    let pointX = x + r * Math.cos(theta);
+    let pointY = y + r * Math.sin(theta);
+    let rotatedPoint = rotatePoint(pointX, pointY, x, y, angle);
+    pointX = rotatedPoint.x;
+    pointY = rotatedPoint.y;
+    i === 0 ? context.moveTo(pointX, pointY) : context.lineTo(pointX, pointY);
+  }
+  context.closePath();
+  context.fill();
+  context.stroke();
+}
+
+function drawAsteroid(context, x, y, size) {
+  context.beginPath();
+  for (let i = 0; i < 60; i++) {
+    let t = i / 60 * 2 * Math.PI;
+    let pointX = x + size * Math.pow(Math.cos(t), 3);
+    let pointY = y + size * Math.pow(Math.sin(t), 3);
+    i === 0 ? context.moveTo(pointX, pointY) : context.lineTo(pointX, pointY);
+  }
+  context.closePath();
+  context.fill();
+  context.stroke();
+}
+
+function rotatePoint(x, y, centerX, centerY, angle) {
+  const cosAngle = Math.cos(angle);
+  const sinAngle = Math.sin(angle);
+  let translatedX = x - centerX;
+  let translatedY = y - centerY;
+  let rotatedX = translatedX * cosAngle - translatedY * sinAngle;
+  let rotatedY = translatedX * sinAngle + translatedY * cosAngle;
+  rotatedX += centerX;
+  rotatedY += centerY;
+  return { x: rotatedX, y: rotatedY };
+}
+
+function getBoundingBoxForShape(x, y, size, isLimaçon) {
+    // Get the bounding box of the shape based on its position and size
+    let minX, maxX, minY, maxY;
+    
+    if (isLimaçon) {
+      // For Limaçon, calculate a bounding box based on the shape's radius and rotation
+      minX = x - size;
+      maxX = x + size;
+      minY = y - size;
+      maxY = y + size;
+    } else {
+      // For Asteroid, also use size-based bounds
+      minX = x - size;
+      maxX = x + size;
+      minY = y - size;
+      maxY = y + size;
+    }
+    
+    return { minX, maxX, minY, maxY };
+  }
+  
+  function isBoundingBoxOverlap(bbox1, bbox2) {
+    return !(bbox1.maxX < bbox2.minX || bbox1.minX > bbox2.maxX || bbox1.maxY < bbox2.minY || bbox1.minY > bbox2.maxY);
+  }
+  function draw() {
+    context.clearRect(0, 0, asteroidCanvas.width, asteroidCanvas.height);
+    context.fillStyle = "rgba(255, 255, 255, 0)";
+    context.fillRect(0, 0, asteroidCanvas.width, asteroidCanvas.height);
+    context.shadowColor = "rgba(128, 255, 0, 1)";
+    context.shadowBlur = 10;
+    context.shadowOffsetX = 5;
+    context.shadowOffsetY = 5;
+
+    
+
+    const asteroids = [
+      { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.4, size: 120 },
+      { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.65, size: 300 },
+      { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 2.45, size: 420 },
+      { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.5, size: 220 },
+      { x: asteroidCanvas.width / 4, y: asteroidCanvas.height / 1.95, size: 380 }
+    ];
+  
+    asteroids.forEach(asteroid => {
+      let adjustedSize = Math.max(0, Math.min(900, (mouseY / asteroidCanvas.height) * asteroid.size));
+      let asteroidX = mouseX;
+  
+      let color = "rgba(255, 255, 255, 0.0)"; // Default color
+  
+      // Get bounding boxes for the left and mirrored shapes
+      let bbox1, bbox2;
+      let isLimaçon1 = Math.abs(mouseX - asteroid.x) >= asteroidCanvas.width / 4;
+      let isLimaçon2 = Math.abs(mouseX - asteroid.x) >= asteroidCanvas.width / 4;
+      
+      // Get the bounding box of the first shape (Limaçon or Asteroid)
+      bbox1 = getBoundingBoxForShape(asteroidX, asteroid.y, adjustedSize, isLimaçon1);
+  
+      // Get the bounding box of the second shape (mirrored Limaçon or Asteroid)
+      let mirroredX = asteroidCanvas.width - asteroidX;
+      bbox2 = getBoundingBoxForShape(mirroredX, asteroid.y, adjustedSize, isLimaçon2);
+  
+      // Check if bounding boxes overlap
+      let isOverlap = isBoundingBoxOverlap(bbox1, bbox2);
+      
+      context.fillStyle = color; // Transparent dark effect
+
+      context.strokeStyle = "rgba(128, 255, 0, 0.9)";
+      if (isLimaçon1) {
+        let angle = (mouseX / asteroidCanvas.width) * 2 * Math.PI;
+        drawLimaçonShape(context, asteroidX, asteroid.y, adjustedSize, angle);
+      } else {
+        drawAsteroid(context, asteroidX, asteroid.y, adjustedSize);
+      }
+      context.fillStyle = color;
+      context.strokeStyle = "rgba(128, 255, 0, 0.9)";
+      if (isLimaçon2) {
+        let angle = (mouseX / asteroidCanvas.width) * 2 * Math.PI;
+        drawLimaçonShape(context, mirroredX, asteroid.y, adjustedSize, -angle);
+      } else {
+        drawAsteroid(context, mirroredX, asteroid.y, adjustedSize);
+      }
+  
+      // Apply an effect if there's an overlap (highlight region manually)
+      if (isOverlap) {
+        // Draw a semi-transparent highlight along the shape's path
+        context.fillStyle = "rgba(0, 0, 0, 0.02)"; // Transparent dark effect
+        context.strokeStyle ="rgba(255, 255, 255, 0.1)"; // White stroke for emphasis
+        
+        // Draw the shape for overlap (original shape path)
+        if (isLimaçon1) {
+          let angle = (mouseX / asteroidCanvas.width) * 2 * Math.PI;
+          drawLimaçonShapeHighlight(context, asteroidX, asteroid.y, adjustedSize, angle);
+        } else {
+          drawAsteroidHighlight(context, asteroidX, asteroid.y, adjustedSize);
+        }
+  
+        // Draw the mirrored shape for overlap
+        if (isLimaçon2) {
+          let angle = (mouseX / asteroidCanvas.width) * 2 * Math.PI;
+          drawLimaçonShapeHighlight(context, mirroredX, asteroid.y, adjustedSize, -angle);
+        } else {
+          drawAsteroidHighlight(context, mirroredX, asteroid.y, adjustedSize);
+        }
+  
+        // Manually apply a shadow effect using custom shadow properties
+        context.shadowColor =  "rgba(0, 0, 0, 0.5)";
+        context.shadowBlur = 10;
+        context.shadowOffsetX = 5;
+        context.shadowOffsetY = 5;
+  
+        // Draw the highlighted overlapping shapes with shadow
+        context.fillStyle = "rgba(255, 255, 255, 0.1)"; // Slightly darkened fill for overlap
+        if (isLimaçon1) {
+          let angle = (mouseX / asteroidCanvas.width) * 2 * Math.PI;
+          drawLimaçonShapeHighlight(context, asteroidX, asteroid.y, adjustedSize, angle);
+        } else {
+          drawAsteroidHighlight(context, asteroidX, asteroid.y, adjustedSize);
+        }
+  
+        // Reset the shadow after drawing
+        context.shadowColor = 'transparent';
+      }
+    });
+  }
+  
+  // Highlight function for Limaçon shape
+  function drawLimaçonShapeHighlight(context, x, y, size, angle) {
+    context.beginPath();
+    for (let i = 0; i < 80; i++) {
+      let theta = i / 80 * 2 * Math.PI;
+      let r = size * Math.sin(2 * theta);
+      let pointX = x + r * Math.cos(theta);
+      let pointY = y + r * Math.sin(theta);
+      let rotatedPoint = rotatePoint(pointX, pointY, x, y, angle);
+      pointX = rotatedPoint.x;
+      pointY = rotatedPoint.y;
+      i === 0 ? context.moveTo(pointX, pointY) : context.lineTo(pointX, pointY);
+    }
+    context.closePath();
+    context.fill();
+    context.stroke();
+  }
+  
+  // Highlight function for Asteroid shape
+  function drawAsteroidHighlight(context, x, y, size) {
+    context.beginPath();
+    for (let i = 0; i < 60; i++) {
+      let t = i / 60 * 2 * Math.PI;
+      let pointX = x + size * Math.pow(Math.cos(t), 3);
+      let pointY = y + size * Math.pow(Math.sin(t), 3);
+      i === 0 ? context.moveTo(pointX, pointY) : context.lineTo(pointX, pointY);
+    }
+    context.closePath();
+    context.fill();
+    context.stroke();
+  }
+  
+  
+
+document.addEventListener("mousemove", (event) => {
+  const rect = asteroidCanvas.getBoundingClientRect();
+  mouseX = event.clientX - rect.left;
+  mouseY = event.clientY - rect.top;
+  draw();
+});
+
+document.addEventListener("touchmove", (event) => {
+  const rect = asteroidCanvas.getBoundingClientRect();
+  if (event.touches.length > 0) {
+    mouseX = event.touches[0].clientX - rect.left;
+    mouseY = event.touches[0].clientY - rect.top;
+    draw();
+  }
+});
+
+window.addEventListener("resize", resizeCanvas);
+
+draw();
+
+
+// ✅ Touch Support for Mobile
+    renderer.domElement.addEventListener("touchstart", (e) => {
+        e.preventDefault();
+        if (e.touches.length > 0) {
+            updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
+        }
+    });
+
+    renderer.domElement.addEventListener("touchmove", (e) => {
+        e.preventDefault();
+        if (e.touches.length > 0) {
+            updateMousePosition(e.touches[0].clientX, e.touches[0].clientY);
+        }
+    });
+    
+
+    renderer.domElement.addEventListener("touchend", () => {
+ 
+        simMaterial.uniforms.mouse.value.set(-10, -10);
+    });
