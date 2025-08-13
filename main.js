@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+
 const boDiv = document.querySelector('#bo');
 const container2 = document.querySelector('#glcanvas');
 const next = document.querySelector('#next');
@@ -71,26 +71,8 @@ function applyH1GlitchEffect() {
       // Apply filter
       h1.style.filter = `url(#${filterId})`;
 
-      
-
     
-    
-
-
-
-
-
-
-      // Optional glitch effect
-      const glitchTimeline = gsap.timeline({ 
-          repeat: -1, 
-          yoyo: true 
-      });
-
-      glitchTimeline.to(h1, {
-          duration: 0.1,
-          repeat: 5
-      });
+   
   });
 }
 
@@ -148,74 +130,15 @@ function startAnimation() {
 }
 
 
-(function() {
-  const blurProperty = gsap.utils.checkPrefix("filter"),
-        blurExp = /blur\((.+)?px\)/,
-        getBlurMatch = target => (gsap.getProperty(target, blurProperty) || "").match(blurExp) || [];
 
-  gsap.registerPlugin({
-    name: "blur",
-    get(target) {
-      return +(getBlurMatch(target)[1]) || 0;
-    },
-    init(target, endValue) {
-      let data = this,
-          filter = gsap.getProperty(target, blurProperty),
-          endBlur = "blur(" + endValue + "px)",
-          match = getBlurMatch(target)[0],
-          index;
-      if (filter === "none") {
-        filter = "";
-      }
-      if (match) {
-        index = filter.indexOf(match);
-        endValue = filter.substr(0, index) + endBlur + filter.substr(index + match.length);
-      } else {
-        endValue = filter + endBlur;
-        filter += filter ? " blur(0px)" : "blur(0px)";
-      }
-      data.target = target; 
-      data.interp = gsap.utils.interpolate(filter, endValue); 
-    },
-    render(progress, data) {
-      data.target.style[blurProperty] = data.interp(progress);
-    }
-  });
-})();
+
 
 const container1 = document.querySelector('#rec .cent');
 const video = document.querySelectorAll('.mot');
 
-gsap.set(container1, { 
-          opacity: 0, 
-          scale: 1.2,
-          blur: 20,
-      });
 
-gsap.set(video, { 
-          opacity: 0, 
-          scale: 1,
-          blur: 40,
-      });
 
-      // Reveal animation
-const revealTimeline = gsap.timeline();
 
-revealTimeline.to(video,{
-          opacity: 1,
-          scale: 1,
-          duration: 3,
-          blur: 0,
-          ease: "power2.out"
-      });
-
-revealTimeline.to(container1,{
-        opacity: 1,
-        scale: 1,
-        duration: 2,
-        blur: 0,
-        ease: "power2.out"
-    });
 
 
       next.addEventListener('mouseover', () => {

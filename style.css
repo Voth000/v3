@@ -711,8 +711,7 @@ background-size: cover;
 
 
 .container {
-    scroll-snap-type: proximity;
-    scroll-snap-type: y proximity;
+
     display: grid;
     height: 100%;
     overflow-x: hidden;
@@ -722,7 +721,7 @@ background-size: cover;
 }
 
 .section {
-    scroll-snap-align: start;
+ 
 
 
    

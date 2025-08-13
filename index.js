@@ -266,7 +266,7 @@ class SceneManager {
                         if (this.autoLoopTimeout) {
                             clearTimeout(this.autoLoopTimeout);  // Clear auto-loop while hovering
                         }
-                        gsap.to(this.root1.rotation, { y: hoverRotations[selector], duration: 2 });
+                     ;
     
                         // Activate corresponding elements
                         const buttons = document.querySelectorAll('.main1');
@@ -354,10 +354,7 @@ class SceneManager {
             if (!this.isHovering && this.root1) {
                 const currentSelector = hoverKeys[currentHoverIndex];
     
-                gsap.to(this.root1.rotation, { 
-                    y: hoverRotations[currentSelector], 
-                    duration: 2
-                });
+               ;
     
                 currentHoverIndex = (currentHoverIndex + 1) % hoverKeys.length;
             }
@@ -392,16 +389,7 @@ class SceneManager {
         this.autoLoopTimeout = setTimeout(() => this.autoSwitchButton(), 8000);
 
         this.positionArrow();
-        // Animate the new "bebe" element
-        gsap.fromTo(bebes[this.activeIndex], 
-            { y: 400, opacity: 0 }, 
-            { 
-                y: 0, 
-                opacity: 1, 
-                duration: 1.5, 
-                ease: "power2.out"
-            }
-        );
+       ;
     }
     
 
