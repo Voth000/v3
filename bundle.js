@@ -655,3 +655,69 @@ function revealGrid() {
 
 
 
+const hoverImg = document.getElementById("hoverimg");
+const pushDiv = document.querySelector(".push");
+
+function startGif() {
+  hoverImg.src = hoverImg.getAttribute("data-gif");
+}
+
+function stopGif() {
+  hoverImg.src = hoverImg.getAttribute("data-static");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Mobile behavior
+  if (window.innerWidth <= 1024) {
+    // Set GIF permanently
+    hoverImg.src = hoverImg.getAttribute("data-gif");
+
+    // Remove hover behavior
+    pushDiv.onmouseover = null;
+    pushDiv.onmouseout = null;
+  } else {
+    // Desktop behavior – set hover events
+    pushDiv.onmouseover = startGif;
+    pushDiv.onmouseout = stopGif;
+  }
+
+  // Optional: canvas insert for desktop
+  if (window.innerWidth > 1024) {
+    const output = document.getElementById("rec");
+    output.innerHTML = `
+                <div class="cent"></div>
+                <canvas id="glcanvas" width="100%" height="100%" tabindex="0"></canvas>
+                <div class="sd" id="transbot">
+                    <div id="tap-here" class="mobile-text">Tap here</div>
+                    <div id="scroll-down" class="desktop-text">𐰸</div>
+                </div>
+            `;
+  }
+
+  // Lazy-load videos
+  const lazyVideos = Array.from(document.querySelectorAll("video.lazy-video"));
+  if ("IntersectionObserver" in window) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (!el.src) {
+            el.src = el.getAttribute('data-src');
+            el.load();
+          }
+          videoObserver.unobserve(el);
+        }
+      });
+    });
+    lazyVideos.forEach((video) => {
+      videoObserver.observe(video);
+    });
+  } else {
+    // Fallback: load all videos
+    lazyVideos.forEach((video) => {
+      video.src = video.getAttribute('data-src');
+      video.load();
+    });
+  }
+});
+
