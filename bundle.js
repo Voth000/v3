@@ -654,7 +654,7 @@ function revealGrid() {
 
 
 
-// Inline scripts previously embedded in index.html
+
 const hoverImg = document.getElementById("hoverimg");
 const pushDiv = document.querySelector(".push");
 
